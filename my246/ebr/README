@@ -1,0 +1,78 @@
+Emergency Backup Recovery Assignment
+
+"HELP!!"  Your doctor friend called, his voice drenched with
+desperation.  "You've got to help me recover my database files!"  You
+feel keenly obligated, since after all, you were the one to write the
+Medical Office Management software on which his practice depends.
+He's usually very good at making backups of his data, but something
+happened this time that he is powerless to fix.
+
+Somehow amidst your friend's anguished sobs, you get the gist of what
+happened.  He entered the command "copy *.dbf backup" and instead of
+copying all DBF files to a "backup" directory, it made one big file
+called "backup" containing all the DBF files "smooshed" together.
+This would happen if somehow the backup directory was removed, which
+is apparently what happened, because then the copy command would treat
+"backup" as the destination file name.  To make matters much worse,
+Murphy's Law kicked in at just the wrong time (or right time,
+depending on how you look at it!)  Some unknown bug caused all the
+original DBF files to suddenly become empty.  That's right, his
+directory listing looked like this:
+
+H:\classes\cs346\assignments\ebr\files\data>dir
+ Volume in drive H is .
+ Volume Serial Number is 0948-052C
+
+ Directory of H:\classes\cs346\assignments\ebr\files\data
+
+07/08/2003  01:42 PM    <DIR>          .
+07/08/2003  01:43 PM    <DIR>          ..
+07/08/2003  01:42 PM                 0 acctno.dbf
+07/08/2003  01:42 PM                 0 check.dbf
+07/08/2003  01:42 PM                 0 claimno.dbf
+07/08/2003  01:42 PM                 0 dicode.dbf
+07/08/2003  01:42 PM                 0 policy.dbf
+07/08/2003  01:42 PM                 0 recall.dbf
+07/08/2003  01:42 PM                 0 trcode.dbf
+07/08/2003  01:42 PM         1,226,009 backup
+               8 File(s)      1,226,009 bytes
+               2 Dir(s)   9,356,705,792 bytes free
+
+
+That information, while very worrisome, will at least allow you to
+correctly name the seven individual DBF files you realize you must
+extract from the one "backup" file, because, of course, that
+information was lost when the file was made. (Unlike a .zip or a .jar
+file, for instance, the path/filename information for contained files
+is not stored in the containing file itself.)  Unfortunately, you
+don't know how big each file was before being "nullified", so you have
+to determine the boundary between one file and the next some other
+way.
+
+So, for this assignment your task is to successfully split the
+"backup" file into the seven original DBF files.  To help you meet
+your deadline (your friend needs his data NOW of course) the
+SplitDBF.java stub file is provided.  Get familiar with the
+RandomAccessFile class, and implement the getSize and getOffsets
+methods using that class. Googleing "DBF header format" may prove
+useful.  Ditto for "JDBF for free". (Hint, hint!)  Also, finish
+implementing the filename method, which was obviously quickly hacked
+together.
+
+Hint: use this file-size information to verify that your getOffsets
+method works correctly.
+
+h:\classes\cs346\Assignments\ebr\working\files:
+  total 1232
+  drwxrwxrwx   2 Rick     0               0 Sep 16 06:11 .
+  drwxrwxrwx   2 Rick     0               0 Sep 16 06:11 ..
+  -rw-rw-rw-   1 Rick     0              73 Sep 16 06:11 acctno.dbf
+  -rw-rw-rw-   1 Rick     0            1468 Sep 16 06:11 check.dbf
+  -rw-rw-rw-   1 Rick     0              73 Sep 16 06:11 claimno.dbf
+  -rw-rw-rw-   1 Rick     0           13800 Sep 16 06:11 dicode.dbf
+  -rw-rw-rw-   1 Rick     0         1044600 Sep 16 06:11 policy.dbf
+  -rw-rw-rw-   1 Rick     0          120090 Sep 16 06:11 recall.dbf
+  -rw-rw-rw-   1 Rick     0           45911 Sep 16 06:11 trcode.dbf
+
+Hint: use the backup file in /home/cs246/files/backup (i.e., pass
+      that path as your command-line argument).

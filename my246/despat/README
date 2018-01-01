@@ -1,0 +1,108 @@
+Design Patterns Assignment
+
+Your team is to research two assigned Design Patterns (ones that are
+apropos to your module -- see Blackboard) and prepare a 10-15 minute
+presentation.  In your presentation, you should critique the use of
+these specific patterns, either in your own project design, or else
+somewhere in the java libraries.  You are encouraged to present sample
+code that you either find or write.
+
+Here are some bullet points to stimulate your thinking:
+
+o  David Geary calls Design Patterns "best practices"
+   of experienced object-oriented software developers,
+   captured in some helpfully descriptive form.  See
+   http://www.javaworld.com/javaworld/jw-10-2001/jw-1012-designpatterns.html
+
+o  Building architect Christopher Alexander originally developed the
+   concept of patterns in his book "The Timeless Way of Building" first
+   published in 1979.
+
+o  A pattern is a design solution to a problem within the
+   context of other problems.
+
+o  Problems are (usually) interdependent.
+
+o  This means that a single problem cannot be solved in
+   isolation but rather must be solved in the context of
+   other competing forces or obstacles.
+
+o  Thus, a pattern is a solution that strikes some balance
+   between competing forces.
+
+o  The better we understand the problem, the better our
+   chances of discovering or creating a solution.
+
+o  Alexander argues that if we find the right decomposition
+   of the problem, then the form of the solution will
+   reveal itself and the final solution is the synthesis
+   of solutions to generate a form.
+
+o  Decomposing the problem is not only a matter of finding
+   the problem constituents but also understanding their
+   interdependencies.
+
+o  A pattern is *more* than a solution to a set of problems
+   in a context.
+
+o  What makes a solution a pattern is the fact that it is
+   *recurring*.
+
+o  If a design solution in its essential distilled form
+   is found in multiple systems and is a sucessful design,
+   then this solution is a pattern.
+
+o  The GoF (Gang of Four) is Gamma, Helm, Johnson and Vlissides.
+   Their 1995 book "Design Patterns: Elements of Reusable
+   Object-Oriented Software" is considered a classic.
+
+o  For a familiar example -- Singleton
+
+   Problem: Provide global access to some service (Class)
+
+   Constraint: Only one instance of this service should be available.
+
+   Threading can be a problem (references from multiple threads to
+   the same Singleton), but there are ways to alleviate that.
+
+o  Other Design Patterns (not all-inclusive):
+
+   *  Model-View-Controller
+
+   *  Template Method
+
+   *  Abstract Factory
+
+   *  Observer
+
+   *  Publisher/Subscriber
+
+   *  Mediator
+
+   *  Visitor
+
+   *  Composite
+
+   *  Decorator
+
+   *  Bridge
+
+   *  Adapter
+
+   *  Command
+
+Study the presentation in our246/notes/despat.txt carefully.  Also,
+see the Patterns folder under Course Documents in Blackboard for more
+information.  Use any other resources you can find, including google,
+and come up with some good examples that you will study, play with,
+take apart and put back together, and be prepared to talk about.
+Use your creativity!
+
+Grading:  Your team will evaluate your own oral presentation using
+the following scale:
+
+ 50 means "We completely bombed."
+ 75 means "We did okay."
+100 means "We couldn't have done better."
+
+Defend your chosen score in a posting to your team Discussion Board!

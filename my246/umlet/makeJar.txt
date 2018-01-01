@@ -1,0 +1,2 @@
+Main-Class: com.umlet.control.Umlet
+Class-Path: com ..\..\cs246\umlet\avalon-framework-cvs-20020315.jar ..\..\cs246\umlet\batik.jar ..\..\cs246\umlet\crimson.jar ..\..\cs246\umlet\fop.jar ..\..\cs246\umlet\jdom.jar ..\..\cs246\umlet\xalan-2.3.1.jar ..\..\cs246\umlet\xercesImpl-2.0.1.jar xml-apis.jar .

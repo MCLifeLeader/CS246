@@ -1,0 +1,62 @@
+Quark Collection Assignment
+
+The purpose of this assignment is to give you experience with
+Collections and Assertions.
+
+Specifically, you are to implement a *highly specialized* collection
+class.  The contents of this special-purpose collection will be
+AT MOST three Quark objects, at any given time.  This presents some
+interesting challenges when implementing the java.util.Collection
+interface, which has the following 15 methods:
+
+ 1. public int size();
+ 2. public boolean isEmpty();
+ 3. public boolean contains(Object o);
+ 4. public Iterator iterator();
+ 5. public Object[] toArray();
+ 6. public Object[] toArray(Object a[]);
+ 7. public boolean add(Object o);
+ 8. public boolean remove(Object o);
+ 9. public boolean containsAll(Collection c);
+10. public boolean addAll(Collection c);
+11. public boolean removeAll(Collection c);
+12. public boolean retainAll(Collection c);
+13. public void clear();
+14. public boolean equals(Object o);
+15. public int hashCode();
+
+Constraints:
+
+Name your class QuarkCollection and put it in a QuarkCollection.java file.
+This is the (only) file you will submit.
+
+You MAY NOT use an array or any other Collection type as the backing
+store of your Collection.  Specifically, that means no array or
+Collection type member variables are allowed.
+
+You need not *support* the remove method of the Iterator interface.
+This means you must *implement* it (albeit stubbed) as follows:
+
+      public void remove()
+      {
+         throw new UnsupportedOperationException();
+      }
+
+Because remove-while-iterating is unsupported, you need not worry
+about providing a fail-fast iterator (which implies throwing a
+ConcurrentModificationException).
+
+Your code MUST PASS ALL THE TESTS in the TestQuarkCollection.java file
+provided. You MAY NOT modify TestQuarkCollection.java IN ANY WAY!
+
+Suggestions:
+
+Create a stubbed (empty or one-liner method bodies) QuarkCollection.java
+before attempting to compile TestQuarkCollection.java, which is the only file
+you need to explicitly compile, as the compiler will compile
+QuarkCollection.java for you.
+
+Apply the grrZ principle to find the magic java compiler and interpreter (jvm)
+command-line arguments that make this all work.
+
+Maximize Reuse.  That means the smaller your code, the better!

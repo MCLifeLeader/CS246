@@ -1,0 +1,24 @@
+Adapter
+  - MyObject and TheirObject: I want to use TheirObject as if it was MyObject.
+
+I write an "Adapter" which is a wrapper around TheirObject to provide the functionality that MyObject is doing.
+  - "Wrapper Pattern" adapts on interface for a class into one that a client expects.
+  - Two types "Object Adapter Pattern" - Contains an instance of the Object it wraps.
+
+"Class Adapter Pattern" - Uses multiple inheritance. Not appicable for Java, so previous option would be used.
+  - Types of Wrappers: "Adapter", "Decorators", "Proxies"
+  - Pattern      Functionality       Interface
+  - "Adapter"    Same                Different
+  - "Decorator"  Different           Same
+  - "Proxy"      Same                Same
+
+Adapter   - Changes an interface without adding new functionality
+Decorator - Does not change the interface but adds or extends new functionality
+Proxy     - Simply wraps the existing but often changes access in a spacific styleized way.
+
+/*****************************************************************************************/
+
+Bridge
+  - Is a desgin pattern used in software engineering to decouple an abstraction from its implementation so that the two can vary independantly"
+  - Useful especially when the class varies often but also what the class does.
+  - Bridge uses basic abstract classes and interfaces where implementation may vary but basic desired functionality does not.

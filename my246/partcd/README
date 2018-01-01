@@ -1,0 +1,81 @@
+Particle Class Diagram Assignment
+
+The purpose of this assignment is to give you experience designing
+classes and drawing your design using UML class diagrams.
+
+The classification of elementary particles is complicated because
+there are two essential but distinct divisions among them. Do they, or
+do they not, satisfy the Pauli exclusion principle (fermions versus
+bosons)? Are they, or are they not, subject to the strong nuclear
+force (hadrons versus others)?
+
+The following table shows these divisions:
+(see also http://particleadventure.org/particleadventure/frameless/chart.html)
+
++------------------------+---------------------------+-----------------------+
+|                        |                           |                       |
+|                        |   HADRONS                 |  NOT HADRONS          |
+|                        |                           |                       |
+|                        |   This is the name given  |  No word has been     |
+|                        |   to particles that are   |  coined to designate  |
+|                        |   subject to the strong   |  particles that are   |
+|                        |   nuclear force.          |  not subject to the   |
+|                        |                           |  strong nuclear force.|
+|                        |                           |                       |
++------------------------+---------------------------+-----------------------+
+|                        |                           |			     |
+|  FERMIONS              |   BARYONS		     |	LEPTONS		     |
+|                        |			     |			     |
+|  Any particle that	 |   These are particles     |  This is the name     |
+|  satisfies the Pauli   |   that are both hadrons   |  given to fermions    |
+|  exclusion principle   |   and fermions. Nucleons  |  that are not subject |
+|  is called a fermion,  |   (protons and neutrons)  |  to the strong nuclear|
+|  in honor of           |   are baryons.  So are    |  force.  Electrons    |
+|  Enrico Fermi.         |   quarks, which are       |  and neutrinos are    |
+|                        |   components of nucleons. |  leptons.	     |
+|                        |			     |			     |
++------------------------+---------------------------+-----------------------+
+|                        |			     |			     |
+|  BOSONS      	       	 |   MESONS    	       	     |	OTHER BOSONS	     |
+|      	  		 |			     |			     |
+|  Any particle that     |   This is the name given  |  Photons (carriers of |
+|  does not satisfy the  |   to particles that are   |  the electromagnetic  |
+|  Pauli exclusion       |   both hadrons and        |  force) and W-bosons  |
+|  principle is called   |   bosons. Pions and kaons |  and Z-bosons	     |
+|  a boson, in honor of  |   are mesons.             |  (carriers of the weak|
+|  the Indian physicist  |                           |  nuclear force) are   |
+|  Satyenda Bose.        |                           |  bosons that are not  |
+|			 |			     |	subject to the strong|
+|			 |			     |	nuclear force.       |
+|			 |			     |	Nor is the so-called |
+|			 |			     |	Higgs-boson.	     |
+|			 |			     |			     |
++------------------------+---------------------------+-----------------------+
+
+Your task is to use the UMLet tool to create class diagrams for the
+"things" mentioned in the above table. This is a simple* tool to use.
+The hard part is thinking up a reasonable set of classes/interfaces,
+their inter-relationships, and how best to draw them. Neatness and
+clarity count. A class diagram should also include a short list (3 or
+fewer) of the basic properties and responsibilities of that class (as
+much as can be inferred from the table above).
+
+Name your file: particles.uxf
+
+* The instructions for using UMLet are simple. First, you must compile
+the source code.  How to do that is in Step 3 in the umlet
+assignment's README.  Then start the program using the umlet.sh script
+(in the same directory as the README you just read), which invokes the
+java command to load the com.umlet.control.Umlet main application
+class.  (Yes, UMLet is a java application!)  Read the instructions in
+the lower-right corner of the application window when it appears.
+Experiment with the various elements in the "palette" just above those
+instructions.  Practice saving your file (as particles.uxf) in this
+(partcd) directory, NOT the umlet directory!  The .uxf file type is
+the default, but you can also save it as a JPG, SVG or PDF file, if
+you wish.  Just make sure the .uxf file is the one you submit.
+
+Hints: While the things in this table are named in the plural, Pions,
+Kaons, Mesons, etc., are NOT good class names.  Use the singular form
+of Pion, Kaon, Meson, etc., instead.  Also, whereas Hadron is a good name
+for a class (or interface), NonHadron is most definitely NOT!

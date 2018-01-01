@@ -1,0 +1,80 @@
+Threads of Glory Assignment
+
+The purpose of this assignment is to let you have a chance to shine --
+to show the heights of glory to which you can attain by your efforts,
+both creative and mundane.
+
+You should use this exercise as a chance to have some fun with
+threads!  You will also have the opportunity to learn more about
+dynamic class loading, and a little bit about AWT and Swing.
+
+Here are the specific tasks to tackle:
+
+1. Create a stand-alone GUI application using standard AWT
+   or Swing widgets having AT LEAST three labels, one textfield,
+   two lists and two buttons, as shown in this diagram:
+
+			 +------------------------------+
+	 Enter Runnable: |                              |
+			 +------------------------------+ 
+
+	      Runnables                Running Threads
+	+-------------------+       +-------------------+
+	|                   |       |                   |
+	|                   |       |                   |
+	|                   |       |                   |
+	|                   |       |                   |
+	|                   |       |                   |
+	|                   |       |                   |
+	|                   |       |                   |
+	|                   |       |                   |
+	+-------------------+       +-------------------+
+
+	    +----------+                 +----------+
+	    |  Start   |                 |   Stop   |
+	    +----------+                 +----------+
+
+2. The "Enter Runnable"-labeled text field will accept the
+   name of a Runnable class.  When the Start button is pushed
+   use this String class name to make the following happen:
+
+   a. dynamically load the class,
+
+   b. instantiate this loaded class,
+
+   c. instantiate a Thread with that instance passed as the Runnable
+      argument to the Thread constructor, and
+
+   d. start this Thread instance.
+
+3. Each time you enter a string (the same as one previously entered,
+   or else a different one) in the TextField and push Start, create a new
+   Thread and start it.
+
+4. Figure out a way to stop threads that have been started.
+
+5. Figure out a way to restart threads whose Runnable classes
+   have already been loaded.
+
+6. Dynamically load, instantiate and start one or more Thread
+   *subclasses* of your own design.
+
+7. Figure out how to have your Runnables or Thread subclasses do
+   something interesting--especially something that interacts with
+   (manipulates somehow) the user-visible components of the GUI.
+
+try
+{
+Runable runnable = (Runnable) StringUtil.toObject(name);
+new Thread(runnable).start();
+while(MyThread.getInstance().isThreadRunning())
+{
+   //Do Something
+   //Simply exit from the run method
+   //
+}
+}
+catch()
+{
+}
+

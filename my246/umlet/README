@@ -1,0 +1,48 @@
+Fix UMLet Assignment
+
+The purpose of this assignment is to learn more about code maintenance
+(fixing problems), code organization and java build issues.  Also, to
+receive a brief exposure to the concept of design patterns.
+
+Here are the specific requirements:
+
+ 1. Change '.mlt' to '.uxf' in Umlet.java (all occurrences).
+
+ 2. Commit this change.
+
+ 3. Build the code in your own workspace and run it.  Use the command
+    javac -extdirs /home/cs246/umlet -d . source/*.java
+    to build the code.
+
+ 4. Change all singletons to use a thread-safe approach
+    (static initialization).
+
+ 5. Rename all prototype's CloneFromMe methods to cloneFromMe.
+
+ 6. Use jalopy to "beautify" the files with singletons in them to
+    conform to the CS246 Java Coding Standards (no renaming of variables
+    or methods, just formatting).
+
+    Enter the following command (after connecting to the source directory):
+
+	/home/cs246/jalopy Umlet.java
+
+    successively replacing Umlet.java with each of the other java files
+    to be reformatted. Alternatively, you can supply all at once
+    the list of files on the command line, e.g.:
+
+	/home/cs246/jalopy Clip.java Umlet.java UniversalListener.java
+
+ 7. Commit these changes.
+
+ 8. Build this new code and run it using either the 'umlet.bat' script
+    (on Windows) or the 'umlet.sh' script (on Linux).  (This only works
+    on Windows if you copy .jar files in /home/cs246/umlet over
+    to your H drive, and put it in a H:\cs246\umlet folder.)
+
+ 9. Figure out how to provide one script named 'umlet.cmd' that works
+    to run the progam under both Linux and Windows.  This script should
+    have exactly one line in it -- less than 80 characters in length --
+    less than 20 if you're good!
+
+10. Add and commit this script.

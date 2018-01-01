@@ -1,0 +1,58 @@
+Begat-O-Matic Assignment
+
+Write a java program to automatically print nine verses from Genesis
+chapter 5. Verses 9-17 have a very regular structure, which can be
+printed as follows:
+
+Print three times, filling in new data between the '<>' angle brackets
+each time:
+
+<verse number>. And <father> lived <number of years father lived
+before he begat son> years, and begat <son>:
+<verse number + 1>. And <father> lived after he begat <son> <number of
+years father lived after he begat son>, and begat sons and daughters:
+<verse number + 2>. And all the days of <father> were <total years
+father lived> years: and he died.
+
+Replace <verse number> with <verse number + 3>, replace <father> with
+<son> and repeat with new data.
+
+Create any classes of your own you think necessary, but you must use
+java.util.StringTokenizer and
+java.text.MessageFormat in your solution.
+
+Furthermore, you MAY NOT use classes from any other package (other
+than java.lang), or written by anyone else.  In other words, the
+following two are the only acceptable import statements you are
+allowed:
+
+import java.text.MessageFormat;
+
+import java.util.StringTokenizer;
+
+This means, of course, that any file I/O is verboten. Hardwired data
+is likewise forbidden (lookup keys excepted).
+
+This is intended as a test of your ingenuity, to see what you can come
+up with given these constraints.  Do your best!
+
+Because one of you asked, I provided hints in class for using "System
+properties" to get the data you need. Reading "man java" is the
+starting point. To make it unnecessary to type a lot (or use shell
+command history) you are allowed to use the supplied begat.sh file to
+compile, run and test your program -- it does everything except write
+the code!  How do you use begat.sh?  Just enter "begat.sh" (without
+the quotes) at your shell prompt, just as you would any other shell
+command, like "ls".
+
+The output of your program should look EXACTLY like Genesis 5:9-17, i.e.:
+
+9. And Enos lived ninety years, and begat Cainan:
+10. And Enos lived after he begat Cainan eight hundred and fifteen years, and begat sons and daughters:
+11. And all the days of Enos were nine hundred and five years: and he died.
+12. And Cainan lived seventy years, and begat Mahalaleel:
+13. And Cainan lived after he begat Mahalaleel eight hundred and forty years, and begat sons and daughters:
+14. And all the days of Cainan were nine hundred and ten years: and he died.
+15. And Mahalaleel lived sixty and five years, and begat Jared:
+16. And Mahalaleel lived after he begat Jared eight hundred and thirty years, and begat sons and daughters:
+17. And all the days of Mahalaleel were eight hundred and ninety and five years: and he died.

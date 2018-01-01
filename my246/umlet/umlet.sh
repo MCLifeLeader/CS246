@@ -1,0 +1,1 @@
+java -cp /home/cs246/umlet/crimson.jar:/home/cs246/umlet/jdom.jar:/home/cs246/umlet/xml-apis.jar:/home/cs246/umlet/batik.jar:/home/cs246/umlet/fop.jar:/home/cs246/umlet/js.jar:/home/cs246/umlet/xalan-2.3.1.jar:/home/cs246/umlet/xercesImpl-2.0.1.jar:/home/cs246/umlet/avalon-framework-cvs-20020315.jar:. com.umlet.control.Umlet
