@@ -1,0 +1,54 @@
+
+   Friday, 19 May 2006
+
+o  James Ricks, Prayer and Thought
+
+o  "Better Living in Objectville and Serious Polymorphism" quiz
+
+o  Polymorphic FileToucher Lab Exercise
+
+   See our246/samplecode/haptic/FileToucher.java
+
+   (cvs co our246; cd our246/samplecode/haptic)
+
+   Pair   		   Name of FileToucher subclass to create
+   ----                    --------------------------------------
+
+   Randall and Ben       - CountingFileToucher
+
+   Mike and Steven       - TimestampFileToucher
+
+   James and James	 - CollectingFileToucher
+
+   Alan and Rick	 - SoftFileToucher
+
+   Kelly and Randy	 - JavaSoftFileToucher (*.java)
+                           (How do you set a FileFilter?)
+
+   Eric and Michael      - TxtSoftFileToucher (*.txt)
+                           (How do you set a FileFilter?)
+
+o  Warmup BOOPOP/BOODPAP Analysis Exercise
+
+   1) In the following skeletal code, which BOOPOPs/BOODPAPs are
+      flaunted/flouted?
+
+      public class Whatever
+      {
+	 public static void main(String[] args)
+	 {
+	    new Whatever(args).run();
+	 }
+
+	 public Whatever(String[] args)
+	 {
+	 }
+
+	 public void run()
+	 {
+	 }
+      }
+
+   2) Does this code compile/run as is?
+
+================================================================

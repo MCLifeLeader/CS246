@@ -1,0 +1,11 @@
+1. Go to the subdirectory ECLIPSE/plugins and create a new, empty subdirectory in "plugins" named "com.umlet.plugin"
+2. Download the Umlet3 zip-file and extract it, yielding the Umlet3 directory
+3. Copy all files and directories of the Umlet3 directory to "plugins/com.umlet.plugin"; thus, e.g., the file "plugin.xml" is located at "plugins/com.umlet.plugin/plugin.xml"
+
+Now, re-start Eclipse!
+
+
+To create a new, empty UMLet diagram, 
+1. select a directory in the resource navigator,
+2. select "File/New/Other.." from the menu or the context menu, and, in the subsequent wizard,
+3. select Umlet/Diagram.

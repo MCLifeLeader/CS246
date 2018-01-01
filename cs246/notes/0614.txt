@@ -1,0 +1,123 @@
+
+   Wednesday, 14 June 2006
+
+o  Ben Stoddard, Prayer and Thought
+
+o  Answer Questions
+
+o  Project Discussion
+
+   But first!
+
+o  Design Problem Solution Space Exploration (DPSSE)
+
+   Adding/revising requirements drives the design,
+   dictating to a large degree the direction it needs to go.
+
+   1. Requirement: add some javadocs.
+
+   2. Requirement: separate the variant from the invariant.
+
+      Add an addButton method to avoid duplication of a button's
+      label with its constraint designator.
+
+   3. Requirement: make the labels on the buttons and their positions
+      as follows:
+
+         Red - North
+         Green - East
+         Blue  - West
+         Black - South
+         Center - Center
+
+       Add another addButton method to fulfill new requirement.
+
+   4. Requirement: Make the buttons do something besides look pretty!
+
+         When a NON-center button is pushed, change the foreground
+	 color of the CENTER button to be the color named by the
+	 button's label.
+
+   5. Make it change the foreground color of the center button, but using
+      better OO design techniques.
+
+   6. Try a dynamic way to map color name to color.
+
+   7. Get rid of the awful overkill of a Color subclass for every color!
+
+      This last requirement can be fulfilled by doing a lookup via
+
+      "reflection" -- which capability is yet another reason Java is
+
+      so powerful!
+
+o  Whither DPSSE - or, what is the takeaway?
+
+   We learned that there is a better way to fulfill the requirement to
+   "map" color names to Color objects than using a map, or perish
+   forbid, using dynamic loading of Color subclasses named Red, Green,
+   etc.
+
+   The design principles illustrated by this whole DPSSE:
+
+   1. "Just because you can doesn't mean you should!"
+
+   2. "There's always another way!"
+
+   Which leads right into...
+
+o  Be Ye Therefore Perfect N/A in Software Design
+
+   Why there is no perfect design (adapted from a review (p. 98) by
+   Michael Sokal in the October 2003 Scientific American of "Small
+   Things Considered: Why there is no perfect design" by Henry
+   Petroski, published by Alfred A. Knopf.):
+
+   Anyone designing anything must work within a set of constraints.
+
+   All designs must involve tradeoffs, if not in form, then in
+   function; if not in time, then in space; if not in this, then in
+   that.
+
+   The design process is thus often labyrinthine, and successive
+   compromises in response to specific constraints close off and open
+   up different choice points later in the process.
+
+   Indeed, even as designers "perfect" their creations, they usually
+   both improve (in some ways) and impair (in others) what came
+   before.
+
+   The most important part of design is redesign.
+   -- Paul Graham
+
+   The key is to distinguish the important from the unimportant, the
+   essentials from the nonessentials.
+
+   "Besides the noble art of getting things done, there is the noble
+   art of leaving things undone. The wisdom of life consists in the
+   elimination of nonessentials."
+
+   -- Lin Yutang
+
+o  Person and Player
+
+   public class Person
+   {
+       public Person(String inName)
+       {
+       }
+    }
+
+    public class Player extends Person
+    {
+       public Player()
+       {
+          super(Config.get("user.name", "No Name"));
+       }
+    }
+
+    public class ComputerPlayer
+
+       extends Player ???
+
+================================================================

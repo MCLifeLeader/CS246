@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?><umlet_diagram><element><type>com.umlet.element.custom.Component</type><coordinates><x>10</x><y>100</y><w>160</w><h>80</h></coordinates><panel_attributes> 
+Component</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.custom.ActiveClass</type><coordinates><x>10</x><y>20</y><w>160</w><h>60</h></coordinates><panel_attributes>ActiveClass</panel_attributes><additional_attributes></additional_attributes></element></umlet_diagram>

@@ -1,0 +1,37 @@
+
+   Tuesday, 13 June 2006
+
+o  Michael Ricks, Prayer and Thought
+
+o  Answer Questions
+
+o  Project Discussion
+
+   In the lab...
+
+      cd ~/our246/project
+      cvs up -d
+      export PROJPATH=$HOME/our246/project
+      . $PROJPATH/sdk/savetyping.sh
+
+   Once you've done that, figure out the correct order to do
+   these next five commands (yes, that requires figuring out
+   what each one does!):
+
+      pj
+      mj
+      ba
+      bb
+      uou
+
+   Now that you have built the project and run the sudoku
+   program, let's start exploring!
+
+   The server has a really simple command-line user interface.
+   How do you use it?
+
+   How do you generate the (javadoc) documentation?
+
+   How do you look at the generated documentation?
+
+================================================================

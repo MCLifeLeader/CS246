@@ -1,0 +1,84 @@
+
+   Tuesday, 30 May 2006
+
+o  Alan, Prayer and Thought
+
+o  Answer Questions
+
+   Q1. What (in the world) is the "grrZ" principle?!
+
+   A1. It's my observation that these two sentences are very similar:
+
+          John is eager to please.
+
+          John is easy to please.
+
+       They're similar on the surface, but not below.
+       Their meanings are very different.
+
+       Applying the "gersy" (the original name) principle means
+       looking below the surface, never settling for the superficial!
+
+   Q2. What does "maximize reuse" mean in the context of the Quark
+       Collection assignment?
+
+   A2. It means don't write code that's already been written and is
+       available for reuse (via inheritance, for example).
+
+   Q3. What abstract collection code is available for reuse in the
+       java.util package?
+
+   A3. That's a good place to do some digging and applying of a
+       certain principle to answer this question!
+
+o  GUI Design
+
+   GUIs (Graphical User Interfaces) in 4 easy steps
+
+   C.L.A.W.
+
+   C omponents (things like Buttons, Labels, TextFields, Panels)
+
+   L ayout     (how components use the screen real estate)
+
+   A ctions    (what should happen when the user "touches" the GUI)
+
+   W iring     (how to hook up the Actions to the Components)
+
+   AWT = Abstract Window Toolkit (java.awt, java.awt.event, ...)
+
+   AWT is not the only GUI Toolkit available.
+
+   - JFC/Swing
+
+   - SWT (Standard Window Toolkit)
+
+   Component is the direct or indirect superclass of all GUI Components,
+   including Panel, which extends Container, which extends Component.
+
+   BorderLayout is one of the simplest Layouts:
+
+   You can add components to containers (like Panel)
+   on the North, South, East, West or Center of the container:
+
+       +--------------------------------------------------+
+       |      North (e.g., for Menu Bars, Tool Bars)      |
+       +---+------------------------------------------+---+
+       |   |                                          |   |
+       |   |                                          |   |
+       |   |                                          |   |
+       | W |                                          | E |
+       | e |                                          | a |
+       | s |                 Center                   | s |
+       | t |                                          | t |
+       |   |                                          |   |
+       |   |                                          |   |
+       |   |                                          |   |
+       |   |                                          |   |
+       +---+------------------------------------------+---+
+       |      South (e.g., for status message Labels)     |
+       +--------------------------------------------------+
+
+   See our246/samplecode/gui/BorderLayoutDemo.java for a quick demo.
+
+================================================================

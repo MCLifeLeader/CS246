@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: lib/epsgraphics.jar lib/pdf-transcoder.jar lib/batik-all.j
+ ar lib/tools.jar
+Created-By: 1.5.0-beta2 (Sun Microsystems Inc.)
+Main-Class: com.umlet.control.Umlet
+

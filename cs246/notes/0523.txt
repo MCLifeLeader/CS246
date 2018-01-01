@@ -1,0 +1,43 @@
+
+   Tuesday, 23 May 2006
+
+o  Michael Ricks, Prayer and Thought
+
+o  Answer Questions
+
+o  More Collections
+
+   From the Collections Trail of the Java Tutorial:
+
+   * Note that the code always refers to the collection by its
+     interface type (Set), rather than by its implementation type
+     (HashSet).  This is a *strongly* recommended programming
+     practice, as it gives you the flexibility to change
+     implementations merely by changing the constructor.  If either
+     the variables used to store a collection or the parameters used
+     to pass it around are declared to be of the collection's
+     implementation type rather than its interface type, *all* such
+     variables and parameters must be changed in order to change the
+     collection's implementation type.  Furthermore, there's no
+     guarantee that the resulting program will work. If the program
+     uses any nonstandard operations that are present in the original
+     implementation type but not in the new one, the program will
+     fail.  Referring to collections only by their interface prevents
+     you from using any nonstandard operations.
+
+o  UML for Java Programmers
+
+   From what you've gleaned about UML from reading Head First Java:
+
+   * Draw a Class Diagram with Animal and Dog in the proper relationship
+
+   * Add an interface named Pet and put it in your diagram
+
+   * Dog IS-A Animal, and Dog IS-A Pet
+
+   * Add a Collar Class, and draw the "Dog HAS-A Collar" relationship
+
+   See Course Documents > UML Example
+			> UML for Java Programmers PowerPoint (or PDF)
+
+================================================================

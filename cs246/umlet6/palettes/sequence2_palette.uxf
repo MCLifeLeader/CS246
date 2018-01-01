@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><umlet_diagram><element><type>com.umlet.element.base.SequenceDiagram</type><coordinates><x>10</x><y>10</y><w>390</w><h>350</h></coordinates><panel_attributes>title:sequence diagram
+_alpha:A_|_beta:B_|_gamma:G_
+1-&gt;&gt;2:1,2
+2-/&gt;1:async Msg.
+3-&gt;&gt;&gt;1:1,3
+1.&gt;3:1,3:async return Msg
+1-&gt;1:1:self
+iframe{:interaction frame
+2-&gt;3:2,3:async Msg.
+iframe}</panel_attributes><additional_attributes>transparentSelection=false</additional_attributes></element></umlet_diagram>

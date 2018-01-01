@@ -1,0 +1,3 @@
+
+   Make it look and feel like Web Sudoku minus the "webisms".
+	

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+/home/cs246/jalopy-console-0.1-1.5rc3/preferences.sh $* #-c http://emp.byui.edu/neffr/jalopy/cs246/codepreferences.xml $*
+
+for f in $*
+do
+   head -1 $f | grep -q '// $Header' ||
+   (echo '// $Header$' > tmp$$; cat $f >> tmp$$; mv tmp$$ $f; dos2unix $f)
+done

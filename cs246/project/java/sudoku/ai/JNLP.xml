@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<jnlp spec="2.0"
+codebase="157.201.194.213/home/owe04013/our246/project"
+href="157.201.194.213/home/owe04013/our246/project/java/sudoku/ai/Sudoku.jnlp">
+<information>
+<title>Sudoku</title>
+<vendor>CS246</vendor>
+<offline-allowed/>
+</information>
+<resources>
+<jar href="Sudoku.jar"/>
+<jar href="Sudokuai.jar"/>
+<jar href="Sudokual.jar"/>
+<jar href="Sudokucs.jar"/>
+<jar href="Sudokusi.jar"/>
+<jar href="Sudokuui.jar"/>
+<j2se version="5.0+"
+href="http://java.sun.com/products/autodl/j2se"/>
+</resources>
+<application-desc main-class="Sudoku"/>
+</jnlp> 

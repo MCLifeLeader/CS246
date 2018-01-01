@@ -1,0 +1,39 @@
+import java.io.File;
+
+import java.util.ArrayList;
+
+/**
+ * Puts the given files into an ArrayList.
+ */
+public class CollectingFileToucher extends FileToucher
+{
+   /**
+    * Holds the files being touched.
+    */
+   ArrayList<File> files;
+
+   /**
+    * Calls the superclass constructor and creates an empty list.
+    */
+   public CollectingFileToucher(String[] args)
+   {
+      super(args);
+      files = new ArrayList<File>();
+   }
+
+   /**
+    * Adds a given file to the list.
+    */
+   public void touchOne(File inFile)
+   {
+      files.add(inFile);
+   }
+
+   /**
+    * Outputs the list.
+    */
+   public void report(File file)
+   {
+      System.out.println(files);
+   }
+}
