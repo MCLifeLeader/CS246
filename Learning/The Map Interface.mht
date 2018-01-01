@@ -1,0 +1,1482 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: The Map Interface
+Date: Mon, 29 May 2006 10:22:07 -0600
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_00C0_01C68309.BCBCC530"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2869
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00C0_01C68309.BCBCC530
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://java.sun.com/docs/books/tutorial/collections/interfaces/map.html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>The Map Interface</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<SCRIPT language=3DJavaScript>=0A=
+<!-- hide=0A=
+function openWin(term) {=0A=
+  url=3D"../../information/glossary.html#" + term;=0A=
+  myWin=3D window.open(url, "Glossary",=0A=
+              =
+"width=3D400,height=3D150,scrollbars=3Dyes,status=3Dno,toolbar=3Dno,menub=
+ar=3Dno");=0A=
+  myWin.focus();=0A=
+}=0A=
+//-->=0A=
+</SCRIPT>
+
+<STYLE type=3Dtext/css>.FigureCaption {
+	FONT-SIZE: smaller; MARGIN-LEFT: 1in; MARGIN-RIGHT: 1in; FONT-FAMILY: =
+Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+</STYLE>
+
+<META content=3D"MSHTML 6.00.5346.5" name=3DGENERATOR></HEAD>
+<BODY link=3D#000099 bgColor=3D#ffffff><B><FONT size=3D-1>The =
+Java</FONT><SUP><FONT=20
+size=3D-2>TM</FONT></SUP> <FONT size=3D-1>Tutorial</FONT></B> <BR>
+<TABLE width=3D550 summary=3Dlayout>
+  <TBODY>
+  <TR>
+    <TD vAlign=3Dcenter align=3Dleft><A=20
+      =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/qu=
+eue.html"=20
+      target=3D_top><IMG height=3D26 alt=3D"Previous Page"=20
+      =
+src=3D"http://java.sun.com/docs/books/tutorial/images/PreviousArrow.gif" =
+
+      width=3D26 align=3Dmiddle border=3D0></A> <A=20
+      =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/TOC.html#inte=
+rfaces"=20
+      target=3D_top><IMG height=3D26 alt=3D"Lesson Contents"=20
+      src=3D"http://java.sun.com/docs/books/tutorial/images/TOCIcon.gif" =
+width=3D26=20
+      align=3Dmiddle border=3D0></A> <A=20
+      =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/or=
+der.html"=20
+      target=3D_top><IMG height=3D26 alt=3D"Next Page"=20
+      =
+src=3D"http://java.sun.com/docs/books/tutorial/images/NextArrow.gif"=20
+      width=3D26 align=3Dmiddle border=3D0></A></TD>
+    <TD vAlign=3Dcenter align=3Dmiddle><FONT size=3D-1><A=20
+      href=3D"http://java.sun.com/docs/books/tutorial/index.html"=20
+      target=3D_top>Start of Tutorial</A> &gt; <A=20
+      =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/index.html"=20
+      target=3D_top>Start of Trail</A> &gt; <A=20
+      =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/in=
+dex.html"=20
+      target=3D_top>Start of Lesson</A> </FONT></TD>
+    <TD vAlign=3Dcenter align=3Dright><FONT size=3D-1><A=20
+      href=3D"http://java.sun.com/docs/books/tutorial/search.html"=20
+      target=3D_top>Search</A> <BR><A=20
+      =
+href=3D"http://developer.sun.com/contact/tutorial_feedback.jsp">Feedback =
+
+      Form</A> </FONT></TD></TR></TBODY></TABLE><IMG height=3D8 alt=3D"" =
+
+src=3D"http://java.sun.com/docs/books/tutorial/images/blueline.gif" =
+width=3D550=20
+align=3Dbottom> <BR><FONT size=3D-1><B>Trail</B>: Collections =
+<BR><B>Lesson</B>:=20
+Interfaces </FONT>
+<H2>The Map Interface </H2>
+<BLOCKQUOTE>A <A=20
+  href=3D"http://java.sun.com/j2se/5.0/docs/api/java/util/Map.html"=20
+  target=3D_blank><FONT color=3D#8800bb><CODE>Map</CODE></FONT></A><A=20
+  href=3D"http://java.sun.com/j2se/5.0/docs/api/java/util/Map.html"=20
+  target=3D_blank><IMG height=3D11 alt=3D" (in the API reference =
+documentation)"=20
+  src=3D"http://java.sun.com/docs/books/tutorial/images/apiIcon.gif" =
+width=3D11=20
+  align=3Dmiddle border=3D0></A> is an object that maps keys to values. =
+A map cannot=20
+  contain duplicate keys: Each key can map to at most one value. The=20
+  <CODE>Map</CODE> interface follows.=20
+  <BLOCKQUOTE><PRE>public interface Map {
+
+    //Basic operations
+    V put(K key, V value);
+    V get(Object key);
+    V remove(Object key);
+    boolean containsKey(Object key);
+    boolean containsValue(Object value);
+    int size();
+    boolean isEmpty();
+   =20
+    //Bulk operations
+    void putAll(Map&lt;? extends K,? extends V&gt; t);
+    void clear();
+
+    // Collection Views
+    public Set&lt;K&gt; keySet();
+    public Collection&lt;V&gt; values();
+    public Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet();
+   =20
+    // Interface for entrySet elements
+    public interface Entry {
+        K getKey();
+        V getValue();
+        V setValue(V value);
+    }
+}
+</PRE></BLOCKQUOTE>The Java platform contains three general-purpose=20
+  <CODE>Map</CODE> implementations: <A=20
+  href=3D"http://java.sun.com/j2se/5.0/docs/api/java/util/HashMap.html"=20
+  target=3D_blank><FONT =
+color=3D#8800bb><CODE>HashMap</CODE></FONT></A><A=20
+  href=3D"http://java.sun.com/j2se/5.0/docs/api/java/util/HashMap.html"=20
+  target=3D_blank><IMG height=3D11 alt=3D" (in the API reference =
+documentation)"=20
+  src=3D"http://java.sun.com/docs/books/tutorial/images/apiIcon.gif" =
+width=3D11=20
+  align=3Dmiddle border=3D0></A>, <A=20
+  href=3D"http://java.sun.com/j2se/5.0/docs/api/java/util/TreeMap.html"=20
+  target=3D_blank><FONT =
+color=3D#8800bb><CODE>TreeMap</CODE></FONT></A><A=20
+  href=3D"http://java.sun.com/j2se/5.0/docs/api/java/util/TreeMap.html"=20
+  target=3D_blank><IMG height=3D11 alt=3D" (in the API reference =
+documentation)"=20
+  src=3D"http://java.sun.com/docs/books/tutorial/images/apiIcon.gif" =
+width=3D11=20
+  align=3Dmiddle border=3D0></A>, and <A=20
+  =
+href=3D"http://java.sun.com/j2se/5.0/docs/api/java/util/LinkedHashMap.htm=
+l"=20
+  target=3D_blank><FONT =
+color=3D#8800bb><CODE>LinkedHashMap</CODE></FONT></A><A=20
+  =
+href=3D"http://java.sun.com/j2se/5.0/docs/api/java/util/LinkedHashMap.htm=
+l"=20
+  target=3D_blank><IMG height=3D11 alt=3D" (in the API reference =
+documentation)"=20
+  src=3D"http://java.sun.com/docs/books/tutorial/images/apiIcon.gif" =
+width=3D11=20
+  align=3Dmiddle border=3D0></A>. Their behavior and performance are =
+precisely=20
+  analogous to <CODE>HashSet</CODE>, <CODE>TreeSet</CODE>, and=20
+  <CODE>LinkedHashSet</CODE>, as described in <A=20
+  =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/se=
+t.html"=20
+  target=3D_top>The Set Interface</A><A=20
+  =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/se=
+t.html"=20
+  target=3D_top><IMG height=3D11 alt=3D" (in the Collections trail)"=20
+  =
+src=3D"http://java.sun.com/docs/books/tutorial/images/tutorialIcon.gif" =
+width=3D11=20
+  align=3Dmiddle border=3D0></A> section. Also, <CODE>Hashtable</CODE> =
+was=20
+  retrofitted to implement <CODE>Map</CODE>. </BLOCKQUOTE>
+<H3 fmstyle=3D"C-Head">Comparison to Hashtable</H3>
+<BLOCKQUOTE>If you've used <CODE>Hashtable</CODE>, you're already =
+familiar=20
+  with the general basics of <CODE>Map</CODE>. (Of course =
+<CODE>Map</CODE> is an=20
+  interface, while <CODE>Hashtable</CODE> is a concrete implementation.) =
+The=20
+  following are the major differences:=20
+  <UL>
+    <LI><CODE>Map</CODE> provides <CODE>Collection</CODE> views instead =
+of=20
+    direct support for iteration via <CODE>Enumeration</CODE> objects.=20
+    <CODE>Collection</CODE> views greatly enhance the expressiveness of =
+the=20
+    interface, as discussed later in this section.=20
+    <LI><CODE>Map</CODE> allows you to iterate over keys, values, or =
+key-value=20
+    pairs; <CODE>Hashtable</CODE> does not provide the third option.=20
+    <LI><CODE>Map</CODE> provides a safe way to remove entries in the =
+midst of=20
+    iteration; <CODE>Hashtable</CODE> did not. </LI></UL>Finally, =
+<CODE>Map</CODE>=20
+  fixes a minor deficiency in the <CODE>Hashtable</CODE> interface.=20
+  <CODE>Hashtable</CODE> has a method called <CODE>contains</CODE>, =
+which=20
+  returns <CODE>true</CODE> if the <CODE>Hashtable</CODE> contains a =
+given=20
+  <I>value</I>. Given its name, you'd expect this method to return=20
+  <CODE>true</CODE> if the <CODE>Hashtable</CODE> contained a given =
+<I>key</I>,=20
+  because the key is the primary access mechanism for a =
+<CODE>Hashtable</CODE>.=20
+  The <CODE>Map</CODE> interface eliminates this source of confusion by =
+renaming=20
+  the method <CODE>containsValue</CODE>. Also, this improves the =
+interface's=20
+  consistency =97 <CODE>containsValue</CODE> parallels =
+<CODE>containsKey</CODE>.=20
+</BLOCKQUOTE>
+<H3 fmstyle=3D"C-Head">Map Interface Basic Operations</H3>
+<BLOCKQUOTE>The basic operations of <CODE>Map</CODE> (<CODE>put</CODE>,=20
+  <CODE>get</CODE>, <CODE>containsKey</CODE>, =
+<CODE>containsValue</CODE>,=20
+  <CODE>size</CODE>, and <CODE>isEmpty</CODE>) behave exactly like their =
+
+  counterparts in <CODE>Hashtable</CODE>. The following <A=20
+  =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/ex=
+5/Freq.java"=20
+  target=3D_blank><FONT color=3D#bb000f><CODE>program generates a =
+frequency=20
+  table</CODE></FONT></A><A=20
+  =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/ex=
+5/Freq.java"=20
+  target=3D_blank><IMG height=3D11 alt=3D" (in a .java source file)"=20
+  src=3D"http://java.sun.com/docs/books/tutorial/images/sourceIcon.gif" =
+width=3D11=20
+  align=3Dmiddle border=3D0></A> of the words found in its argument =
+list. The=20
+  frequency table maps each word to the number of times it occurs in the =
+
+  argument list.=20
+  <BLOCKQUOTE><PRE>import java.util.*;
+public class Freq {
+    public static void main(String args[]) {
+        Map&lt;String, Integer&gt;	 m =3D
+            new HashMap&lt;String, Integer&gt;();
+
+        // Initialize frequency table from command line
+        for (String a : args) {
+            Integer freq =3D m.get(a);
+            m.put(a, (freq =3D=3D null ? 1 : freq + 1));
+        }
+        System.out.println(m.size() + " distinct words:");
+        System.out.println(m);
+    }
+}
+</PRE></BLOCKQUOTE>The only tricky thing about this program is the =
+second=20
+  argument of the <CODE>put</CODE> statement. That argument is a =
+conditional=20
+  expression that has the effect of setting the frequency to one if the =
+word has=20
+  never been seen before or one more than its current value if the word =
+has=20
+  already been seen. Try running this program with the command:=20
+  <BLOCKQUOTE><PRE>java Freq if it is to be it is up to me to delegate
+</PRE></BLOCKQUOTE>The program yields the following output.=20
+  <BLOCKQUOTE><PRE>8 distinct words:
+{to=3D3, delegate=3D1, be=3D1, it=3D2, up=3D1, if=3D1, me=3D1, is=3D2}
+</PRE></BLOCKQUOTE>Suppose you'd prefer to see the frequency table in=20
+  alphabetical order. All you have to do is change the implementation =
+type of=20
+  the <CODE>Map</CODE> from <CODE>HashMap</CODE> to =
+<CODE>TreeMap</CODE>. Making=20
+  this four-character change causes the program to generate the =
+following output=20
+  from the same command line.=20
+  <BLOCKQUOTE><PRE>8 distinct words:
+{be=3D1, delegate=3D1, if=3D1, is=3D2, it=3D2, me=3D1, to=3D3, up=3D1}
+</PRE></BLOCKQUOTE>Similarly, you could make the program print the =
+frequency=20
+  table in the order the words first appear on the command line simply =
+by=20
+  changing the implementation type of the map to =
+<CODE>LinkedHashMap</CODE>.=20
+  Doing so results in the following output.=20
+  <BLOCKQUOTE><PRE>8 distinct words:
+{if=3D1, it=3D2, is=3D2, to=3D3, be=3D1, up=3D1, me=3D1, delegate=3D1}
+</PRE></BLOCKQUOTE>This flexibility provides a potent illustration of =
+the=20
+  power of an interface-based framework.=20
+  <P>Like the <A =
+href=3D"http://java.sun.com/j2se/5.0/docs/api/java/util/Set.html"=20
+  target=3D_blank><FONT color=3D#8800bb><CODE>Set</CODE></FONT></A><A=20
+  href=3D"http://java.sun.com/j2se/5.0/docs/api/java/util/Set.html"=20
+  target=3D_blank><IMG height=3D11 alt=3D" (in the API reference =
+documentation)"=20
+  src=3D"http://java.sun.com/docs/books/tutorial/images/apiIcon.gif" =
+width=3D11=20
+  align=3Dmiddle border=3D0></A>and <A=20
+  href=3D"http://java.sun.com/j2se/5.0/docs/api/java/util/List.html"=20
+  target=3D_blank><FONT color=3D#8800bb><CODE>List</CODE></FONT></A><A=20
+  href=3D"http://java.sun.com/j2se/5.0/docs/api/java/util/List.html"=20
+  target=3D_blank><IMG height=3D11 alt=3D" (in the API reference =
+documentation)"=20
+  src=3D"http://java.sun.com/docs/books/tutorial/images/apiIcon.gif" =
+width=3D11=20
+  align=3Dmiddle border=3D0></A>interfaces, <CODE>Map</CODE> strengthens =
+the=20
+  requirements on the <CODE>equals</CODE> and <CODE>hashCode</CODE> =
+methods so=20
+  that two <CODE>Map</CODE> objects can be compared for logical equality =
+without=20
+  regard to their implementation types. Two <CODE>Map</CODE> instances =
+are equal=20
+  if they represent the same key-value mappings.=20
+  <P>By convention, all <CODE>Map</CODE> implementations provide =
+constructors=20
+  that take a <CODE>Map</CODE> object and initialize the new =
+<CODE>Map</CODE> to=20
+  contain all the key-value mappings in the specified <CODE>Map</CODE>. =
+This=20
+  standard <CODE>Map</CODE> conversion constructor is entirely analogous =
+to the=20
+  standard <CODE>Collection</CODE> constructor: It allows the caller to =
+create a=20
+  <CODE>Map</CODE> of a desired implementation type that initially =
+contains all=20
+  of the mappings in another <CODE>Map</CODE>, regardless of the other=20
+  <CODE>Map</CODE>'s implementation type. For example, suppose you have =
+a=20
+  <CODE>Map</CODE>, named <CODE>m</CODE>. The following one-liner =
+creates a new=20
+  <CODE>HashMap</CODE> initially containing all of the same key-value =
+mappings=20
+  as <CODE>m</CODE>.=20
+  <BLOCKQUOTE><PRE>Map&lt;K, V&gt; copy =3D new HashMap&lt;K, V&gt;(m);
+</PRE></BLOCKQUOTE></BLOCKQUOTE>
+<P>
+<H3 fmstyle=3D"C-Head">Map Interface Bulk Operations</H3>
+<BLOCKQUOTE>The <CODE>clear</CODE> operation does exactly what you would =
+think=20
+  it could do: it removes all the mappings from the <CODE>Map</CODE>. =
+The=20
+  <CODE>putAll</CODE> operation is the <CODE>Map</CODE> analogue of the=20
+  <CODE>Collection</CODE> interface's <CODE>addAll</CODE> operation. In =
+addition=20
+  to its obvious use of dumping one <CODE>Map</CODE> into another, it =
+has a=20
+  second, more subtle use. Suppose a <CODE>Map</CODE> is used to =
+represent a=20
+  collection of attribute-value pairs; the <CODE>putAll</CODE> =
+operation, in=20
+  combination with the <CODE>Map</CODE> conversion constructor, provides =
+a neat=20
+  way to implement attribute map creation with default values. The =
+following is=20
+  a static factory method that demonstrates this technique.=20
+  <BLOCKQUOTE><PRE>static &lt;K, V&gt; Map&lt;K, V&gt; newAttributeMap(
+        Map&lt;K, V&gt;defaults, Map&lt;K, V&gt; overrides) {
+    Map&lt;K, V&gt; result =3D new HashMap&lt;K, V&gt;(defaults);
+    result.putAll(overrides);
+    return result;
+}
+</PRE></BLOCKQUOTE></BLOCKQUOTE>
+<H3 fmstyle=3D"C-Head">Collection Views</H3>
+<BLOCKQUOTE>The <CODE>Collection</CODE> view methods allow a =
+<CODE>Map</CODE>=20
+  to be viewed as a <CODE>Collection</CODE> in these three ways:=20
+  <UL>
+    <LI><CODE>keySet</CODE> =97 the <CODE>Set</CODE> of keys contained =
+in the=20
+    <CODE>Map</CODE>.=20
+    <LI><CODE>values</CODE> =97 The <CODE>Collection</CODE> of values =
+contained in=20
+    the <CODE>Map</CODE>. This <CODE>Collection</CODE> is not a=20
+    <CODE>Set</CODE>, because multiple keys can map to the same value.=20
+    <LI><CODE>entrySet</CODE> =97 the <CODE>Set</CODE> of key-value =
+pairs=20
+    contained in the <CODE>Map</CODE>. The <CODE>Map</CODE> interface =
+provides a=20
+    small nested interface called <CODE>Map.Entry</CODE>, the type of =
+the=20
+    elements in this <CODE>Set</CODE>. </LI></UL>The =
+<CODE>Collection</CODE> views=20
+  provide the <I>only</I> means to iterate over a <CODE>Map</CODE>. This =
+example=20
+  illustrates the standard idiom for iterating over the keys in a=20
+  <CODE>Map</CODE> with a <CODE>for-each</CODE> construct:=20
+  <BLOCKQUOTE><PRE>for (KeyType key : m.keySet())
+    System.out.println(key);
+</PRE></BLOCKQUOTE>and with an <CODE>iterator</CODE>:=20
+  <BLOCKQUOTE><PRE>//Filter a map based on some property of its keys.
+for (Iterator&lt;Type&gt; i=3Dm.keySet().iterator(); i.hasNext(); )
+    if (i.next().isBogus())
+        i.remove();
+</PRE></BLOCKQUOTE>The idiom for iterating over values is analogous. =
+Following=20
+  is the idiom for iterating over key-value pairs.=20
+  <BLOCKQUOTE><PRE>for (Map.Entry&lt;KeyType, ValType&gt; e : =
+m.entrySet())
+    System.out.println(e.getKey() + ": " + e.getValue());
+</PRE></BLOCKQUOTE>
+  <P>At first, many people worry that these idioms may be slow because =
+the=20
+  <CODE>Map</CODE> has to create a new <CODE>Collection</CODE> instance =
+each=20
+  time a <CODE>Collection</CODE> view operation is called. Rest easy: =
+There's no=20
+  reason that a <CODE>Map</CODE> cannot always return the same object =
+each time=20
+  it is asked for a given <CODE>Collection</CODE> view. This is =
+precisely what=20
+  all the <CODE>Map</CODE> implementations in <CODE>java.util</CODE> do. =
+
+  <P>With all three <CODE>Collection</CODE> views, calling an=20
+  <CODE>Iterator</CODE>'s <CODE>remove</CODE> operation removes the =
+associated=20
+  entry from the backing <CODE>Map</CODE>, assuming that the backing=20
+  <CODE>Map</CODE> supports element removal to begin with. This is =
+illustrated=20
+  by the preceding filtering idiom.=20
+  <P>With the <CODE>entrySet</CODE> view, it is also possible to change =
+the=20
+  value associated with a key by calling a <CODE>Map.Entry</CODE>'s=20
+  <CODE>setValue</CODE> method during iteration (again, assuming the=20
+  <CODE>Map</CODE> supports value modification to begin with). Note that =
+these=20
+  are the <I>only</I> safe ways to modify a <CODE>Map</CODE> during =
+iteration;=20
+  the behavior is unspecified if the underlying <CODE>Map</CODE> is =
+modified in=20
+  any other way while the iteration is in progress.=20
+  <P>The <CODE>Collection</CODE> views support element removal in all =
+its many=20
+  forms =97 <CODE>remove</CODE>, <CODE>removeAll</CODE>, =
+<CODE>retainAll</CODE>,=20
+  and <CODE>clear</CODE> operations, as well as the =
+<CODE>Iterator.remove</CODE>=20
+  operation. (Yet again, this assumes that the backing <CODE>Map</CODE> =
+supports=20
+  element removal.)=20
+  <P>The <CODE>Collection</CODE> views <I>do not</I> support element =
+addition=20
+  under any circumstances. It would make no sense for the =
+<CODE>keySet</CODE>=20
+  and <CODE>values</CODE> views, and it's unnecessary for the=20
+  <CODE>entrySet</CODE> view, because the backing <CODE>Map</CODE>'s=20
+  <CODE>put</CODE> and <CODE>putAll</CODE> methods provide the same=20
+  functionality. </P></BLOCKQUOTE>
+<H3 fmstyle=3D"C-Head">Fancy Uses of Collection Views: Map Algebra</H3>
+<BLOCKQUOTE>When applied to the <CODE>Collection</CODE> views, bulk =
+operations=20
+  (<CODE>containsAll</CODE>, <CODE>removeAll</CODE>, and =
+<CODE>retainAll</CODE>)=20
+  are surprisingly potent tools. For starters, suppose you want to know =
+whether=20
+  one <CODE>Map</CODE> is a submap of another =97 that is, whether the =
+first=20
+  <CODE>Map</CODE> contains all the key-value mappings in the second. =
+The=20
+  following idiom does the trick.=20
+  <BLOCKQUOTE><PRE>if (m1.entrySet().containsAll(m2.entrySet())) {
+	...
+}
+</PRE></BLOCKQUOTE>Along similar lines, suppose you want to know whether =
+two=20
+  <CODE>Map</CODE> objects contain mappings for all the same keys.=20
+  <BLOCKQUOTE><PRE>if (m1.keySet().equals(m2.keySet())) {
+	...
+}
+</PRE></BLOCKQUOTE>Suppose you have a <CODE>Map</CODE> that represents a =
+
+  collection of attribute-value pairs, and two <CODE>Set</CODE>s =
+representing=20
+  required attributes and permissible attributes. (The permissible =
+attributes=20
+  include the required attributes.) The following snippet determines =
+whether the=20
+  attribute map conforms to these constraints and prints a detailed =
+error=20
+  message if it doesn't.=20
+  <BLOCKQUOTE><PRE>static &lt;K, V&gt; boolean validate(Map&lt;K, V&gt; =
+attrMap,
+        Set&lt;K&gt; requiredAttrs, Set&lt;K&gt;permittedAttrs) {
+    boolean valid =3D true;
+    Set&lt;K&gt; attrs =3D attrMap.keySet();
+    if(!attrs.containsAll(requiredAttrs)) {
+        Set&lt;K&gt; missing =3D new HashSet&lt;K&gt;(requiredAttrs);
+        missing.removeAll(attrs);
+        System.out.println("Missing attributes: " + missing);
+        valid =3D false;
+    }
+    if (!permittedAttrs.containsAll(attrs)) {
+        Set&lt;K&gt; illegal =3D new HashSet&lt;K&gt;(attrs);
+        illegal.removeAll(permittedAttrs);
+        System.out.println("Illegal attributes: " + illegal);
+        valid =3D false;
+    }
+    return valid;
+}
+</PRE></BLOCKQUOTE>Suppose you want to know all the keys common to two=20
+  <CODE>Map</CODE> objects.=20
+  <BLOCKQUOTE><PRE>Set&lt;KeyType&gt;commonKeys =3D new =
+HashSet&lt;KeyType&gt;(m1.keySet());
+commonKeys.retainAll(m2.keySet);
+</PRE></BLOCKQUOTE>A similar idiom gets you the common values.=20
+  <P>All the idioms presented thus far have been nondestructive; that =
+is, they=20
+  don't modify the backing <CODE>Map</CODE>. Here are a few that do. =
+Suppose you=20
+  want to remove all the key-value pairs that one <CODE>Map</CODE> has =
+in common=20
+  with another.=20
+  <BLOCKQUOTE><PRE>m1.entrySet().removeAll(m2.entrySet());
+</PRE></BLOCKQUOTE>Suppose you want to remove from one <CODE>Map</CODE> =
+all=20
+  the keys that have mappings in another.=20
+  <BLOCKQUOTE><PRE>m1.keySet().removeAll(m2.keySet());
+</PRE></BLOCKQUOTE>What happens when you start mixing keys and values in =
+the=20
+  same bulk operation? Suppose you have a <CODE>Map</CODE>,=20
+  <CODE>managers</CODE>, that maps each employee in a company to the =
+employee's=20
+  manager. We'll be deliberately vague about the types of the key and =
+the value=20
+  objects. It doesn't matter, as long as they're the same. Now suppose =
+you want=20
+  to know who all the "individual contributors" (or nonmanagers) are. =
+The=20
+  following snippet tells you exactly what you want to know.=20
+  <BLOCKQUOTE><PRE>Set&lt;Employee&gt; individualContributors =3D=20
+    new HashSet&lt;Employee&gt;(managers.keySet());
+individualContributors.removeAll(managers.values());
+</PRE></BLOCKQUOTE>Suppose you want to fire all the employees who report =
+
+  directly to some manager, Simon.=20
+  <BLOCKQUOTE><PRE>Employee simon =3D ... ;
+managers.values().removeAll(Collections.singleton(simon));
+</PRE></BLOCKQUOTE>Note that this idiom makes use of=20
+  <CODE>Collections.singleton</CODE>, a static factory method that =
+returns an=20
+  immutable <CODE>Set</CODE> with the single, specified element.=20
+  <P>Once you've done this, you may have a bunch of employees whose =
+managers no=20
+  longer work for the company (if any of Simon's direct-reports were =
+themselves=20
+  managers). The following code will tell you all the employees whose =
+manager no=20
+  longer works for the company.=20
+  <BLOCKQUOTE><PRE>Map&lt;Employee, Employee&gt; m =3D
+    new HashMap&lt;Employee, Employee&gt;(managers);
+m.values().removeAll(managers.keySet());
+Set&lt;Employee&gt; slackers =3D m.keySet();
+</PRE></BLOCKQUOTE>This example is a bit tricky. First, it makes a =
+temporary=20
+  copy of the <CODE>Map</CODE>, and it removes from the temporary copy =
+all=20
+  entries whose (manager) value is a key in the original =
+<CODE>Map</CODE>.=20
+  Remember that the original <CODE>Map</CODE> has an entry for each =
+employee.=20
+  Thus, the remaining entries in the temporary <CODE>Map</CODE> comprise =
+all the=20
+  entries from the original <CODE>Map</CODE> whose (manager) values are =
+no=20
+  longer employees. The keys in the temporary copy, then, represent =
+precisely=20
+  the employees that we're looking for.=20
+  <P>There are many more idioms like the ones contained in this section, =
+but it=20
+  would be impractical and tedious to list them all. Once you get the =
+hang of=20
+  it, it's not that difficult to come up with the right one when you =
+need it.=20
+  </P></BLOCKQUOTE>
+<H3 fmstyle=3D"C-Head">Multimaps</H3>
+<BLOCKQUOTE>A <I>multimap</I> is like a <CODE>Map</CODE> but it can map =
+each=20
+  key to multiple values. The Java Collections Framework doesn't include =
+an=20
+  interface for multimaps because they aren't used all that commonly. =
+It's a=20
+  fairly simple matter touse a <CODE>Map</CODE> whose values are=20
+  <CODE>List</CODE> instances as a multimap. This technique is =
+demonstrated in=20
+  the next code example, which reads a wordlist containing one word per =
+line=20
+  (all lowercase) and prints out all the anagram groups that meet a size =
+
+  criterion. An <I>anagram group</I> is a bunch of words, all of which =
+contain=20
+  exactly the same letters but in a different order. The program takes =
+two=20
+  arguments on the command line: (1) the name of the dictionary file and =
+(2) the=20
+  minimum size of anagram group to print out. Anagram groups containing =
+fewer=20
+  words than the specified minimum are not printed.=20
+  <P>There is a standard trick for finding anagram groups: for each word =
+in the=20
+  dictionary, alphabetize the letters in the word (that is, reorder the =
+word's=20
+  letters into alphabetical order) and put an entry into a multimap, =
+mapping the=20
+  alphabetized word to the original word. For example, the word =
+<EM>bad</EM>=20
+  causes an entry mapping <EM>abd</EM> into <EM>bad</EM> to be put into =
+the=20
+  multimap. A moment's reflection will show that all the words to which =
+any=20
+  given key maps form an anagram group. It's a simple matter to iterate =
+over the=20
+  keys in the multimap, printing out each anagram group that meets the =
+size=20
+  constraint.=20
+  <P><A=20
+  =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/ex=
+5/Anagrams.java"=20
+  target=3D_blank><FONT color=3D#bb000f><CODE>The following=20
+  program</CODE></FONT></A><A=20
+  =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/ex=
+5/Anagrams.java"=20
+  target=3D_blank><IMG height=3D11 alt=3D" (in a .java source file)"=20
+  src=3D"http://java.sun.com/docs/books/tutorial/images/sourceIcon.gif" =
+width=3D11=20
+  align=3Dmiddle border=3D0></A> is a straightforward implementation of =
+this=20
+  technique. The only tricky part is the <CODE>alphabetize</CODE> =
+method, which=20
+  returns a string containing the same characters as its argument in=20
+  alphabetical order. This routine, which has nothing to do with the =
+Java=20
+  Collections Framework, implements a slick bucket sort. It assumes that =
+the=20
+  word being alphabetized consists entirely of lowercase alphabetic =
+characters.=20
+  <BLOCKQUOTE><PRE>import java.util.*;
+import java.io.*;
+
+public class Anagrams {
+    public static void main(String[] args) {
+        int minGroupSize =3D Integer.parseInt(args[1]);
+
+        //Read words from file and put into a simulated multimap
+        Map&lt;String, List&lt;String&gt;&gt; m =3D new =
+HashMap&lt;String, List&lt;String&gt;&gt;();
+        try {
+        		Scanner s =3D new Scanner(new File(args[0]));
+            String word;
+            while(s.hasNext()) {
+                String alpha =3D alphabetize(word =3D s.next());
+                List&lt;String&gt; l =3D m.get(alpha);
+                if (l=3D=3Dnull)
+                    m.put(alpha, l=3Dnew ArrayList&lt;String&gt;());
+                l.add(word);
+            }
+        } catch(IOException e) {
+            System.err.println(e);
+            System.exit(1);
+        }
+
+        //Print all permutation groups above size threshold
+        for (List&lt;String&gt; l : m.values()) {
+            if (l.size() &gt;=3D minGroupSize)
+                System.out.println(l.size() + ": " + l);
+        }
+    }
+
+    private static String alphabetize(String s) {
+        int count[] =3D new int[256];
+        int len =3D s.length();
+        for (int i=3D0; i&lt;len; i++)
+            count[s.charAt(i)]++;
+        StringBuffer result =3D new StringBuffer(len);
+        for (char c=3D'a'; c&lt;=3D'z'; c++)
+            for (int i=3D0; i&lt;count[c]; i++)
+                result.append(c);
+        return result.toString();
+    }
+}
+</PRE></BLOCKQUOTE>Running this program on a 173,000-word dictionary =
+file=20
+  takes about four seconds on a 1.8 GHz Pentium 4. With a minimum =
+anagram group=20
+  size of eight, it produces the following output.=20
+  <BLOCKQUOTE><PRE>9: [estrin, inerts, insert, inters, niters, nitres, =
+sinter,
+     triens, trines]
+8: [lapse, leaps, pales, peals, pleas, salep, sepal, spale]
+8: [aspers, parses, passer, prases, repass, spares, sparse,
+     spears]
+10: [least, setal, slate, stale, steal, stela, taels, tales,
+      teals, tesla]
+8: [enters, nester, renest, rentes, resent, tenser, ternes,
+     treens]
+8: [arles, earls, lares, laser, lears, rales, reals, seral]
+8: [earings, erasing, gainers, reagins, regains, reginas,
+     searing, seringa]
+8: [peris, piers, pries, prise, ripes, speir, spier, spire]
+12: [apers, apres, asper, pares, parse, pears, prase, presa,
+      rapes, reaps, spare, spear]
+11: [alerts, alters, artels, estral, laster, ratels, salter,
+      slater, staler, stelar, talers]
+9: [capers, crapes, escarp, pacers, parsec, recaps, scrape,
+     secpar, spacer]
+9: [palest, palets, pastel, petals, plates, pleats, septal,
+     staple, tepals]
+9: [anestri, antsier, nastier, ratines, retains, retinas,
+     retsina, stainer, stearin]
+8: [ates, east, eats, etas, sate, seat, seta, teas]=20
+8: [carets, cartes, caster, caters, crates, reacts, recast,
+     traces]
+
+</PRE></BLOCKQUOTE>Many of these words seem a bit bogus, but that's not =
+the=20
+  program's fault; they're in the dictionary file. Here's the <A=20
+  =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/ex=
+5/dictionary.txt"=20
+  target=3D_blank><FONT color=3D#bb000f><CODE>dictionary =
+file</CODE></FONT></A><A=20
+  =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/ex=
+5/dictionary.txt"=20
+  target=3D_blank><IMG height=3D11 alt=3D" (in a .java source file)"=20
+  src=3D"http://java.sun.com/docs/books/tutorial/images/sourceIcon.gif" =
+width=3D11=20
+  align=3Dmiddle border=3D0></A> we used. It is derived from the Public =
+Domain=20
+  ENABLE benchmark reference word list, at <A=20
+  href=3D"http://personal.riverusers.com/~thegrendel/" =
+target=3D_blank><FONT=20
+  =
+color=3D#009bbb>http://personal.riverusers.com/~thegrendel/</FONT></A><A =
+
+  href=3D"http://personal.riverusers.com/~thegrendel/" =
+target=3D_blank><IMG=20
+  height=3D11 alt=3D" (outside of the tutorial)"=20
+  src=3D"http://java.sun.com/docs/books/tutorial/images/otherIcon.gif" =
+width=3D11=20
+  align=3Dmiddle border=3D0></A> </BLOCKQUOTE><IMG height=3D8 alt=3D""=20
+src=3D"http://java.sun.com/docs/books/tutorial/images/blueline.gif" =
+width=3D550=20
+align=3Dbottom> <BR>
+<TABLE width=3D550 summary=3Dlayout>
+  <TBODY>
+  <TR>
+    <TD vAlign=3Dcenter align=3Dleft><A=20
+      =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/qu=
+eue.html"=20
+      target=3D_top><IMG height=3D26 alt=3D"Previous Page"=20
+      =
+src=3D"http://java.sun.com/docs/books/tutorial/images/PreviousArrow.gif" =
+
+      width=3D26 align=3Dmiddle border=3D0></A> <A=20
+      =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/TOC.html#inte=
+rfaces"=20
+      target=3D_top><IMG height=3D26 alt=3D"Lesson Contents"=20
+      src=3D"http://java.sun.com/docs/books/tutorial/images/TOCIcon.gif" =
+width=3D26=20
+      align=3Dmiddle border=3D0></A> <A=20
+      =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/or=
+der.html"=20
+      target=3D_top><IMG height=3D26 alt=3D"Next Page"=20
+      =
+src=3D"http://java.sun.com/docs/books/tutorial/images/NextArrow.gif"=20
+      width=3D26 align=3Dmiddle border=3D0></A></TD>
+    <TD vAlign=3Dcenter align=3Dmiddle><FONT size=3D-1><A=20
+      href=3D"http://java.sun.com/docs/books/tutorial/index.html"=20
+      target=3D_top>Start of Tutorial</A> &gt; <A=20
+      =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/index.html"=20
+      target=3D_top>Start of Trail</A> &gt; <A=20
+      =
+href=3D"http://java.sun.com/docs/books/tutorial/collections/interfaces/in=
+dex.html"=20
+      target=3D_top>Start of Lesson</A> </FONT></TD>
+    <TD vAlign=3Dcenter align=3Dright><FONT size=3D-1><A=20
+      href=3D"http://java.sun.com/docs/books/tutorial/search.html"=20
+      target=3D_top>Search</A> <BR><A=20
+      =
+href=3D"http://developer.sun.com/contact/tutorial_feedback.jsp">Feedback =
+
+      Form</A> </FONT></TD></TR></TBODY></TABLE>
+<P><FONT size=3D-1><A=20
+href=3D"http://java.sun.com/docs/books/tutorial/information/copyright.htm=
+l">Copyright</A>=20
+1995-2005 Sun Microsystems, Inc. All rights reserved. </FONT></P>
+<SCRIPT language=3DJavaScript=20
+src=3D"http://java.sun.com/js/omi/jsc/s_code_remote.js"></SCRIPT>
+</BODY></HTML>
+
+------=_NextPart_000_00C0_01C68309.BCBCC530
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://java.sun.com/docs/books/tutorial/images/PreviousArrow.gif
+
+R0lGODdhGgAaAPUAAPf8//Hy9+34/+bu/97e3tbW3tLh+87W3snN28TS9LvG3LG52ae856XG56O4
+96Cu1p2nwJy955y155S155St54+o2Y+awIyt54yl54ea1oSl54Sc54OVwn6LvHuc53uU53uT2nuM
+53OM53OM3nOE1nKM03KE3m+BvWuE1muEzmt7zmN7zmN7xmN7vV9zvV50sV5zxlBouEpgrUpaljdP
+nwokeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAGgAaAAAG/sCGsBEpFiWSiZJC
+uTgxUI1mkxkaj8llswnFSDdg4TWCVE6Y3MolqslQiUYJ2TypoCVM7xTsGSMrEQABAQCFhgNTbhke
+IFdJFRWEBYaUCWAbHhsgfUeQGYUDC5SGEoqMjEd1JQEJJzKfowAYfBkfIB9IEhUnFgcuMhaTsYuL
+H8YjfyAvFgbBsQ8AA3y2HyMhjx3AsQAKLzWFm7e2ISNKuzIQlAEP3jXfANQgIuTlFBks2oIL7e79
+/tUjRjTJ0EIbAn7+EtYQEdDEwIIWoiV40EJhQoYkUDyU0UEiA138HDBg4WLFCBMZUTi5J+PEoQQM
+GOyrkUABCxYoSOhEkeJCnoUMrl6MMgBTJgABGXIqTaECSoYUMmbEGgBTQSEGJVBkZdr0J1QahKYO
+AJWSKwsvG0rIoGGBwDZKSVMwvdkmbQwaM/DKeHGig98OHDJUGGGWBQwpGUCweCFjbVQakGk0ZqFC
+roqbMFpcAgGC500XMVy8iDHaBQumK26SdEFFEyMQI7KimJ1iRW0VuFW72A0mnK2AwDOSsHyZRYvd
+ooMAADs=
+
+------=_NextPart_000_00C0_01C68309.BCBCC530
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://java.sun.com/docs/books/tutorial/images/TOCIcon.gif
+
+R0lGODlhGgAaAPcAAPz8//v7/vz8/v7+/+ns+uXp+/P1/vn6/vf4/HOBt3B9rX+Owo+e0ouZy5im
+26a16sDH4vDz/vDy+WJzqWJyp5Kh1Jur4KCw5au78LDA9bK+5c3V8ODl9u3w+kZhqVVppGZ6tpur
+26W147DA8Ku657XF8Kay1sTS+7XB4dzk++Xr/ezv+O/x9/v8//r7/vn6/fj5/AAlfgkthBAzhxEz
+hyBAjyFBjydGlDBOlzFOl0VgoVdxr1VtqWV7sWZ8sXeLvnaKun6Rv4WXxImaxIqbxLXH8qKw0r7N
+8qq21NTb7M/W5/f5/vb4/WR7sXWKuoOWwoygy4iaxImbxKvA8JqpzLvL8Ky62dTg/LvF3Nnk/ODn
+9+vx/t/k7+/0/+7z/vL2//L1/LDF8Ka327fH58DQ8LrF3Nrk+MzV5/D1//b5//X4/u7x9/j6/vf5
+/fz9//v8/omi0cvV5+bu/fP3/vH1/LXL8OLs/O7z+/X4/bvQ8Onx/e/1/vL2/Pn7/vL3/vf6/vX4
+/MDV8Orw9/v9//3+//z9/sXb8PX7//r9//P7//z+//v+//7///3+/v////7+/gAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAGgAaAEAI/wANGQpE
+sGAgMmTyKKxSpY7DOiUihgkzImEDO3cKNXLEsSOAJQIK9RkwgI4FOwwyPIBYAlEMIooc+RlCI4YN
+JIpyCpkRA0ccRAoaMBgxggSGBw6QMmAgtEFTp04XQHVaEJFVq3ay6kl0FVGirHa6IJrgQEQVrC85
+0gBC0lEOHo5oOLEqiIJTBxcmXrxiIMsSNx0DO1Jz4kSGKV2EOjB48GDChQwdlhgzJowGoiQ0BLKq
+CA8jNgM4MhowmjQjRjkHTbj7QGGM16+jsNAB24kiRmtov4aCSKgFhw3kvHwjwAaPAY8c2fDhosaO
+AgVMeNDSwIGFlogWoUa9KOYANm4YOf8ieXqQggVLLYzQQOJBAxQQJHSZT7/+fDRfuoSdMJCxY4V5
+RNZQRJNZRlRBZHSl4IIKikACQVe9QUgjAwjwyGiDdJXIV0BVdwEZDXTBByABvNFIch21oYYXYLiw
+xBIcJMbABa3lAQcIYlghRhIcKYEFFwO4QdIbPrJgRogOZBCgVS+x4YgPNJQxgBQxUOFIDzScMUgT
+MXwg1AVVhHhEWo6Q+YgOOpQZBAEEbGCHb2BC1EAMP7ghABEvYcFDDFI+EcMTRtwgwwJ2KOBARFYd
+AsAhA7TwByEDpDEHaYrskUYaioyF3qEhjtCHGy4QwkaLFcLwghsRqBBBBEUkVl0IFE1DcVEWc2xx
+ACFMCPAGAhKs0IELAggQQQoWyKjBFCM8YEEDFTg1QQITPBsttNNWmwAJU2BAQnvtWeCtA+CGu9S4
+4zYQEAA7
+
+------=_NextPart_000_00C0_01C68309.BCBCC530
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://java.sun.com/docs/books/tutorial/images/NextArrow.gif
+
+R0lGODdhGgAaAPUAAPf8//Hy9+34/+bu/97e3tbW3tLh+8nN28TS9LvG3LHI+bG52ae856XG56Cu
+1p2nwJy955y155S155St54+o2Y+awIyt54yl54ea1oSl54Sc54OVwn6LvHuc53uU53uT2nuM53OM
+53OM3nOE1nKM03KE3m+BvWuE1muEzmt7zmN7zmN7xmN7vV9zvV50sV5zxlBouEpgrUpaljdPnwok
+eQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAGgAaAAAG/sCGsAEpFiMRiXIy
+sTgv0ExGgxkaj8llswm9SDVg4fWolDCblq43g6ESjREIQ56cUJiU7hfcGSMHAIGCAQEAFBhTbRgd
+H1dIEgiCkgUAAhgfix0aH31YSg2SggmAASQfnKieShGhgRguHAgBKCQYHh8eSFlmFq0ABQ4wMQUY
+KyIeHiKPWhaFDq0DCQYbMCgiIiC7Z70ANC4JvhUxxtdlTE7cNOouDoWCDzEvJOVmE+r3+OsL7hUz
+LSfXtuUbuO4AAHH/RJQ4Z4EgPhYOFADq9+/EiS1QPrRYwSDCPRcUIjBAAIiDPxQWLTShkOGDiRUI
+EHhjQJOkIBP+UpxA8eRClZtahRbUNBDKhYwXKlCk0MNGQyQADBTYDCUjRgsVKZZGSQQIwAB3oQLM
+8Id1xdY2E3xJItDP6oq3UqZQuRCBwgYOeDmYcBFDxtgZ8d62kNuG0QcUMPz+9RsDcAwYglmAmYzr
+wwkVL1q0gMHZBQzNLV6wYKGZyqYOt5KRGGExq4rXb9+SLn0a160Q10Sw3pk1hWzQLoIAADs=
+
+------=_NextPart_000_00C0_01C68309.BCBCC530
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://java.sun.com/docs/books/tutorial/images/blueline.gif
+
+R0lGODlhJgIIAPcAAAJVswNWtgZWtQdRsAdTtQhWuwlSuQpWtApWtgtTtwtVtAxUuAxWtRJOsBVF
+qSRFrjVKmTs8aD47Zj47aD48bj85ZUA5ZUA6ZkA9akA/aUE7aUE+bUFMnEJNnUM6aUM8aEZTokdM
+nkdNoUdOnkhPn0hQpUhbxElQnkpMo0tMpkw7aExNnU5RnlFQoFs1aGBKn29cinJqv6CNoanj1aqH
+nbb/7Lyksb2lsr6irr6isL7X07+dtb/19cGjr8H31cKgsMKir8KiscKjssL11MP01MSlt8bGxsbx
+08fx2civwsrx1Mr258zu083Nzc6wyM7//9D1+9H66NL/+9T/99X27dbW1tu359vu6N3x8t7/79/M
+39//7eDg4OD/7eD/7+Hh4eH/8OL/6ePu5uP+7eP/8+X97eb87+jUzejo6Oj//+n27Ovr6+3t7e/q
+8PHx8fLr8/Ly8vT09PT6//b29vf7/Pj4+Pj+/Pj/6fn+9/r6+vv7+/zo4fz8/Pz97fz/5/z/6v3o
+4/3s5P39/f3+7v75/f76+/787f7+/v7+///07f/1/v/28P/3/P/4/f/4///5+//5/P/5/f/6/P/7
+7P/88P/+5P/+6f///wAAABgaGHx/dQB4XBYAAIgAAAAAJhgAGHUAdVAAXAAAawAALgAAZ3wAaQAA
+YgAAbAEAACMAAGsAEu8AAP8a4utm1ejoxgAFAAXAtRcCmfgfi8PAw7ICsq40rgAYAAB1AABQAAAg
+AAAACgDvAAD/AADqAADYHAACAAD5AACIvxoAAGYAAOgAvn4AAEgAAncA4sQA1dwAxgD/tQDwmSUw
+iwD/wwDtsgHArv8CAO1fACisA/8aBe1mBCTolP8AF+0A/CBvxAAAGAAAWgAJpAAA7wAA/wAA8AgA
+nAIAACYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH+JEZpbGUgd3JpdHRlbiBi
+eSBBZG9iZSBQaG90b3Nob3CoIDUuMAAsAAAAACYCCAAACP4AnzzhAQWKnDeECCFq06ehw4cQI0qc
+SLGixYsYM2rcyLGjx48gQ4ocSbKkyZMoU6o0acnSn0GUKBm648dPpUuHcl6KEaMDBAgcVrBgcWIE
+iaNIkypdyrSp06dQo0qdSrWq1atYs2rdyrWr169gw4odSxZsiBAiUKRIUQJEixYv0Lhxk+eSCRMO
+FCgQwGDAAAIFDAgeTLiw4cOIEytezLix48eQI0ueTLmy5cuYM2vezLmz58+bDxxAsCBBggAAGjR4
+0OTLlzmHrFiBMWFChAoWLGyg8KG379/AgwsfTry48ePIkytfzry58+fQo0ufTr269evYs2u3fuGC
+BA0ePP5gyKBChQsjXLjUueTIkRYnTnbQKFIkiYwe+PPr38+/v///AAYo4IAEFmjggQgmqOCCDDbo
+4IMQRijhhBRWGKEQQtxgQxBB/JADDjgAUcUaawhySQ01SJFGGljoQAUVU8yAxIw01mjjjTjmqOOO
+PPbo449ABinkkEQWaeSRSCap5JJMNunkk1AyqYQSRAwxJRNHDDGED2zUsd4lUURxBR102CGGGmqQ
+sUQYbLbp5ptwxinnnHTWaeedeOap55589unnn4AGKuighBZq6KGIJlqoGWZ0scUYY5ThRRZZgHHI
+JTjxMckkZwACSCKB7LHHInhEYuqpqKaq6qqsturqqzCwxirrrLTWauutuOaq66689urrr8AGK+yw
+vzLCCCSSPPJIIXo00ogil+SRRxxwBAQAOw==
+
+------=_NextPart_000_00C0_01C68309.BCBCC530
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://java.sun.com/docs/books/tutorial/images/apiIcon.gif
+
+R0lGODlhCwALAKIBAP///7+/v+SZ/1czZgAiGaAA3YgAuwAAACH5BAEAAAEALAAAAAALAAsAAAMl
+GKq1rqKMB4UZ0wlrbg5bJ2JBUYgoQQQYaqhL28FOSz/DTa1OAgA7
+
+------=_NextPart_000_00C0_01C68309.BCBCC530
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://java.sun.com/docs/books/tutorial/images/tutorialIcon.gif
+
+R0lGODlhCwALAKIBAP///7+/vwAiGQAiGQAiGQAiGQAiGQAAACH5BAEAAAEALAAAAAALAAsAAAMl
+GKq1rqKMB4UZ0wlrbg5bJ2JBUYgoQQQYaqhL28FOSz/DTa1OAgA7
+
+------=_NextPart_000_00C0_01C68309.BCBCC530
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://java.sun.com/docs/books/tutorial/images/sourceIcon.gif
+
+R0lGODlhCwALAKIBAP///7+/v/+ZoGYzOAADIt0AEbsADwAAACH5BAEAAAEALAAAAAALAAsAAAMl
+GKq1rqKMB4UZ0wlrbg5bJ2JBUYgoQQQYaqhL28FOSz/DTa1OAgA7
+
+------=_NextPart_000_00C0_01C68309.BCBCC530
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://java.sun.com/docs/books/tutorial/images/otherIcon.gif
+
+R0lGODlhCwALAKIBAP///7+/v5nt/zNeZhwiAAC43QCbuwAAACH5BAEAAAEALAAAAAALAAsAAAMl
+GKq1rqKMB4UZ0wlrbg5bJ2JBUYgoQQQYaqhL28FOSz/DTa1OAgA7
+
+------=_NextPart_000_00C0_01C68309.BCBCC530
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://java.sun.com/js/omi/jsc/s_code_remote.js
+
+/* SiteCatalyst Code Version: G.5 */=0A=
+/* SMI Version 6.3 */=0A=
+/*Note to SMI web developers. Do not install or test this code on your =
+site without approval from the .SUN organization!*/=0A=
+/* =0A=
+Convert all index.html, index.jsp, etc. to foo/.=0A=
+Increase s_hier to 15 levels=0A=
+Add java.net to internal links.=0A=
+*/=0A=
+=0A=
+/************************** CONFIG SECTION **************************/=0A=
+=0A=
+/* Set the Report Suite ID(s) and site ID for each Sun site. The site ID =0A=
+   is pre-pended to pageNames and channel names. */=0A=
+   var s_account=3D"sunglobal,sundeveloper"=0A=
+// var s_account=3D"devsunjavas"=0A=
+=0A=
+/* Uncomment one of the following */=0A=
+var s_siteid =3D "jsc:"=0A=
+=0A=
+var s_dynamicAccountSelection=3Dfalse=0A=
+var s_dynamicAccountList=3D""=0A=
+=0A=
+var =
+s_linkInternalFilters=3D"javascript:,sun.com,java.com,opensolaris.org,sun=
+-catalogue.com,java.net,netbeans.org,globalspecials.sun.com"=0A=
+=0A=
+/* List s_prop and s_eVar variables to be passed during =
+custom/exit/download links.=0A=
+   Otherwise, values passed in are ignored. */=0A=
+var s_linkTrackVars=3D"None"=0A=
+=0A=
+/* List event values in "s_events" to be passed during =
+custom/exit/download links.=0A=
+   Otherwise, events are ignored by default. */=0A=
+var s_linkTrackEvents=3D"None"=0A=
+=0A=
+/* Plugin Config - may be specific to each Sun site */=0A=
+var s_usePlugins=3Dtrue=0A=
+=0A=
+function s_doPlugins() {=0A=
+  /* Add calls to plugins here */=0A=
+        /*pageType 404 fix */=0A=
+        if(s_pageType=3D=3D""){=0A=
+  /* External campaigns */=0A=
+  if(s_campaign=3D=3D"")=0A=
+    s_vp_getCGI('s_campaign','cid');=0A=
+/* Campaign Pathing-30 minutes */=0A=
+  =
+s_vp_getCustomPagePath("s_prop4",s_vp_getValue("s_campaign"),"cmpPath","c=
+id=3D");=0A=
+/* Campaign Page Views */=0A=
+	s_vp_setAndPersistValue('s_prop5',s_vp_getValue('s_campaign'),1.0/48);=0A=
+  // Internal campaigns=0A=
+  s_vp_getCGI('s_eVar1','intcmp');=0A=
+//  s_vp_getFormAbandonState("s_prop1","o","Form Abandonment");=0A=
+        }=0A=
+}=0A=
+=0A=
+// ###################################################=0A=
+// CODE CHANGE FOR FILE: PROTOCOL EXCLUSION 6/28/2005=0A=
+// ###################################################=0A=
+// NEW CODE:=0A=
+   var s_isValid =3D true;=0A=
+   if (location.protocol=3D=3D"file:") { s_isValid=3Dfalse; }=0A=
+// END CODE CHANGE=0A=
+=0A=
+/***************** STANDARD CODE FOR ALL SUN SITES ******************/=0A=
+/**********TO BE CHANGED ONLY BY SMI .SUN PROGRAM MANAGEMENT*****/=0A=
+/* Make certain these variables are defined, if not on page */=0A=
+if (typeof s_channel=3D=3D'undefined')=0A=
+   var s_channel =3D "";=0A=
+if (typeof s_pageName=3D=3D'undefined')=0A=
+   var s_pageName =3D "";   =0A=
+if(typeof s_events=3D=3D'undefined')=0A=
+  var s_events=3D"";=0A=
+if(typeof s_campaign=3D=3D'undefined')=0A=
+  var s_campaign=3D"";=0A=
+if(typeof s_hier1=3D=3D'undefined')=0A=
+  var s_hier1=3D"";=0A=
+if (typeof s_pageType=3D=3D'undefined')=0A=
+  var s_pageType=3D"";=0A=
+        =0A=
+        /*pageType 404 fix */   =0A=
+        if(s_pageType=3D=3D""){=0A=
+/* Check for this common problem */=0A=
+if (s_pageName.toLowerCase()=3D=3D"document.title"){=0A=
+  s_pageName=3Ddocument.title;=0A=
+}=0A=
+=0A=
+/* Use URL as default page name unless s_pageName already populated. */=0A=
+if (typeof s_pageName!=3D'undefined') {=0A=
+    // See if it has a value=0A=
+    if (s_pageName=3D=3D"") {=0A=
+        s_pageName=3Dwindow.top.location.pathname.toLowerCase();=0A=
+        var s_iNames =3D =
+["index.html","index.jsp","index.htm","index.shtml","index.xml","index.jh=
+tml","index.jshtml","index.jspa","index.php"];=0A=
+        for (var a=3D0; a<s_iNames.length; a++) {=0A=
+            var s_iName =3D "/"+s_iNames[a];=0A=
+            if (s_pageName.indexOf(s_iName) > -1 && =
+s_pageName.indexOf(s_iName) =3D=3D s_pageName.length - s_iName.length) {=0A=
+                s_pageName =3D s_pageName.substring(0, s_pageName.length =
+- s_iNames[a].length);=0A=
+            }=0A=
+        }=0A=
+    }=0A=
+}=0A=
+        }=0A=
+var s_disableLegacyVars=3Dtrue=0A=
+var s_eVarCFG=3D""=0A=
+=0A=
+        /*pageType 404 fix */=0A=
+        if(s_pageType=3D=3D""){=0A=
+/* Link Tracking Config */=0A=
+var s_trackDownloadLinks=3Dtrue  // downloads=0A=
+var s_trackExternalLinks=3Dtrue  // external links=0A=
+var s_trackInlineStats=3Dtrue    // ClickMap=0A=
+var =
+s_linkDownloadFileTypes=3D"exe,zip,wav,mp3,mov,mpg,avi,doc,pdf,xls,bin,ta=
+r,Z,gz"=0A=
+var s_linkLeaveQueryString=3Dfalse=0A=
+=0A=
+/* Populate "s_channel" variable (if not already populated). Based on 15 =
+levels of directory. */=0A=
+if(s_channel=3D=3D""){=0A=
+  var s_t1=3D0=0A=
+  var s_t2=3D0=0A=
+  var s_du=3D""=0A=
+  s_du=3Dwindow.top.location.href.toLowerCase()=0A=
+  if((s_t1=3Ds_du.indexOf("://"))>=3D0){=0A=
+    if((s_t2=3Ds_du.indexOf("/",s_t1+3))>=3D(s_t1+3)){=0A=
+      if(s_du.indexOf(".",s_t1+3)<s_t2){=0A=
+        var s_c2=3D""=0A=
+       =0A=
+        s_t1=3Ds_t2+1=0A=
+        s_t2=3Ds_du.lastIndexOf("/")=0A=
+        s_channel=3Ds_du.substring(s_t1,s_t2)=0A=
+       =0A=
+        // Replace all "/" chars with ":"=0A=
+        for(s_t2=3D0; s_t2<s_channel.length; s_t2++){=0A=
+          if(s_channel.charAt(s_t2)=3D=3D"/"){=0A=
+            // Bogus code, but JavaScript 1.0-compatible=0A=
+            =
+s_c2=3Ds_channel.substring(0,s_t2)+":"+s_channel.substring(s_t2+1,s_chann=
+el.length)=0A=
+            s_channel=3Ds_c2=0A=
+          }=0A=
+        }=0A=
+      }=0A=
+    }=0A=
+    =0A=
+  =0A=
+    // Remove everything after the fifteenth "/"=0A=
+    s_t1=3D0=0A=
+    for(s_t2=3D0;s_t2<s_channel.length;s_t2++){=0A=
+      if(s_channel.charAt(s_t2)=3D=3D":"){=0A=
+        s_t1++=0A=
+        if(s_t1=3D=3D15){=0A=
+          s_channel=3Ds_channel.substring(0,s_t1-1)=0A=
+          break=0A=
+        }=0A=
+      }=0A=
+    }=0A=
+  }=0A=
+}=0A=
+=0A=
+/* Places entire path into Hierarchy variable, or just s_channel if =
+populated on page. */=0A=
+=0A=
+if(s_hier1=3D=3D""){=0A=
+	if(s_channel!=3D=3D""){=0A=
+      s_hier1=3Ds_siteid+s_channel=0A=
+    }=0A=
+}=0A=
+=0A=
+=0A=
+/* STANDARD SUN GLOBAL ACCOUNT CODE: pre-pend "pageName", "channel", and =
+"s_hier" with "s_siteid" if not already prepended*/=0A=
+if(typeof s_siteid!=3D'undefined'){=0A=
+  if(typeof s_pageName!=3D'undefined'&&s_pageName.length>0){=0A=
+    if(s_pageName.substr(0,s_siteid.length).toLowerCase()!=3Ds_siteid){=0A=
+      s_pageName=3Ds_siteid+s_pageName;=0A=
+    }=0A=
+  }=0A=
+  if(s_channel.length>0){=0A=
+    if (s_channel.substr(0,s_siteid.length).toLowerCase()!=3Ds_siteid){=0A=
+        s_channel=3Ds_siteid+s_channel;=0A=
+    }=0A=
+  }=0A=
+if(s_hier1.length>0){=0A=
+    if (s_hier1.substr(0,s_siteid.length).toLowerCase()!=3Ds_siteid){=0A=
+        s_hier1=3Ds_siteid+s_hier1;=0A=
+    }=0A=
+  }=0A=
+}=0A=
+=0A=
+/* PUT SITE_ID INTO S_PROP2*/=0A=
+if(typeof s_siteid=3D=3D'undefined'){var s_siteid=3D""};=0A=
+if(typeof s_prop2=3D=3D'undefined'){var s_prop2=3D""};=0A=
+   s_prop2=3Ds_siteid;=0A=
+        }=0A=
+=0A=
+/************************** PLUGINS SECTION *************************/=0A=
+/* You may insert any plugins you wish to use here.                 */=0A=
+/*=0A=
+ * Plugin: Get State Of Form On Abandon=0A=
+ New Form Abandon Plugin goes here when available.=0A=
+ */=0A=
+=0A=
+/*=0A=
+ * Plugin: Get Query String CGI Variable Value=0A=
+ */=0A=
+function s_vp_getCGI(vs,k)=0A=
+        {var v=3D'';if(k&&s_wd.location.search){var =
+q=3Ds_wd.location.search,=0A=
+        =
+qq=3Dq.indexOf('?');q=3Dqq<0?q:q.substring(qq+1);v=3Ds_pt(q,'&',s_cgif,=0A=
+        k)}s_vpr(vs,v)}function s_cgif(t,k){if(t){var =
+te=3Dt.indexOf('=3D'),=0A=
+        =
+sk=3Dte<0?t:t.substring(0,te),sv=3Dte<0?'True':t.substring(te+1);if(=0A=
+        sk=3D=3Dk)return s_epa(sv)}return ''}=0A=
+/* =0A=
+Plugin: Custom Page Path v1.0 (Campaign Pathing-30 minutes)=0A=
+*/=0A=
+function s_vp_getCustomPagePath(s,v,c,p) {=0A=
+var pn=3Ds_vp_getValue("s_pageName");=0A=
+var t=3Dnew Date;t.setTime(t.getTime()+1800000); =0A=
+if(v){if(s_c_w(c,v,t)){s_vpr(s,p+v+":"+pn)}}=0A=
+else{v=3Ds_c_r(c);if(v){s_c_w(c,v,t);s_vpr(s,pn);}}=0A=
+}=0A=
+/*=0A=
+ * Plugin: setAndPersistValue 0.1 - get a value on every page-30 minutes=0A=
+ */=0A=
+function s_vp_setAndPersistValue(vs,v,a){=0A=
+	var l,e=3Dnew Date;if(v){e.setTime(e.getTime()+a*86400000);s_c_w(=0A=
+	's_p_'+vs,v,a?e:a)};l=3Ds_c_r('s_p_'+vs);s_vpr(vs,l)}=0A=
+/*=0A=
+ * Plugin: Get Plugin Modified Value=0A=
+ */=0A=
+function s_vp_getValue(vs)=0A=
+        {var k=3Dvs.substring(0,2)=3D=3D's_'?vs.substring(2):vs;return =
+s_wd[=0A=
+        's_vpm_'+k]?s_wd['s_vpv_'+k]:s_gg(k)}=0A=
+/*=0A=
+ * Plugin Utilities v2.0 (Required For All Plugins)=0A=
+ */=0A=
+function s_vpr(vs,v){if(s_wd[vs])s_wd[vs]=3Ds_wd[vs];else s_wd[vs]=3D''=0A=
+if(vs.substring(0,2) =3D=3D =
+'s_')vs=3Dvs.substring(2);s_wd['s_vpv_'+vs]=3Dv=0A=
+s_wd['s_vpm_'+vs]=3D1}function s_dt(tz,t){var d=3Dnew =
+Date;if(t)d.setTime(=0A=
+t);d=3Dnew Date(d.getTime()+(d.getTimezoneOffset()*60*1000))=0A=
+return new Date(Math.floor(d.getTime()+(tz*60*60*1000)))}=0A=
+function s_vh_gt(k,v){var vh=3D'|'+s_c_r('s_vh_'+k),vi=3Dvh.indexOf('|'+v=0A=
++'=3D'),ti=3Dvi<0?vi:vi+2+v.length,pi=3Dvh.indexOf('|',ti),t=3Dti<0?'':=0A=
+vh.substring(ti,pi<0?vh.length:pi);return t}function s_vh_gl(k){var=0A=
+vh=3Ds_c_r('s_vh_'+k),e=3Dvh?vh.indexOf('=3D'):0;return =
+vh?(vh.substring(0,=0A=
+e?e:vh.length)):''}function s_vh_s(k,v){if(k&&v){var e=3Dnew Date,st=3D=0A=
+e.getTime(),y=3De.getYear(),c=3D's_vh_'+k,vh=3D'|'+s_c_r(c)+'|',t=3Ds_vh_=
+gt(k,=0A=
+v);e.setYear((y<1900?y+1900:y)+5);if(t)vh=3Ds_rep(vh,'|'+v+'=3D'+t+'|','|=
+'=0A=
+);if(vh.substring(0,1)=3D=3D'|')vh=3Dvh.substring(1);if(vh.substring(=0A=
+vh.length-1,vh.length)=3D=3D'|')vh=3Dvh.substring(0,vh.length-1);vh=3Dv=0A=
++'=3D[PCC]'+(vh?'|'+vh:'');s_c_w(c,vh,e);if(s_vh_gt(k,v)!=3D'[PCC]')=0A=
+return 0;vh=3Ds_rep(vh,'[PCC]',st);s_c_w(c,vh,e)}return 1}=0A=
+=0A=
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/=0A=
+var =
+s_un,s_ios=3D0,s_q=3D'',s_code=3D'',code=3D'',s_bcr=3D0,s_lnk=3D'',s_eo=3D=
+'',=0A=
+s_vb,s_pl,s_tfs=3D0,s_etfs=3D0,s_wd=3Dwindow,s_d=3Ds_wd.document,s_ssl=3D=
+(=0A=
+s_wd.location.protocol.toLowerCase().indexOf('https')>=3D0),s_n=3D=0A=
+navigator,s_u=3Ds_n.userAgent,s_apn=3Ds_n.appName,s_v=3Ds_n.appVersion,=0A=
+s_apv,s_i,s_ie=3Ds_v.indexOf('MSIE '),s_ns6=3Ds_u.indexOf('Netscape6/')=0A=
+if(s_v.indexOf('Opera')>=3D0||s_u.indexOf('Opera')>=3D0)s_apn=3D'Opera';v=
+ar=0A=
+s_isie=3D(s_apn=3D=3D'Microsoft Internet Explorer'),s_isns=3D(s_apn=3D=3D=0A=
+'Netscape'),s_isopera=3D(s_apn=3D=3D'Opera'),s_ismac=3D(s_u.indexOf('Mac'=
+)>=3D0)=0A=
+if(s_ie>0){s_apv=3DparseInt(s_i=3Ds_v.substring(s_ie+5));if(s_apv>3)s_apv=
+=3D=0A=
+parseFloat(s_i)}else if(s_ns6>0)s_apv=3DparseFloat(s_u.substring(s_ns6=0A=
++10));else s_apv=3DparseFloat(s_v);function s_fl(s,l){return (s+''=0A=
+).substring(0,l)}function s_co(o){if(!o)return o;var n=3Dnew Object=0A=
+for(x in o)n[x]=3Do[x];return n}function s_num(x){var s=3Dx.toString(),g=3D=0A=
+'0123456789',p,d;for(p=3D0;p<s.length;p++){d=3Ds.substring(p,p+1);if(=0A=
+g.indexOf(d)<0)return 0}return 1}function s_rep(s,o,n){var i=3D=0A=
+s.indexOf(o),l=3Dn.length>0?n.length:1;while(s&&i>=3D0){s=3Ds.substring(0=
+,i)=0A=
++n+s.substring(i+o.length);i=3Ds.indexOf(o,i+l)}return s}function s_ape(=0A=
+s){return s?s_rep(escape(''+s),'+','%2B'):s}function s_epa(s){=0A=
+return s?unescape(s_rep(''+s,'+',' ')):s}function s_pt(s,d,f,a){var t=3D=0A=
+s,x=3D0,y,r;while(t){y=3Dt.indexOf(d);y=3Dy<0?t.length:y;t=3Dt.substring(=
+0,y)=0A=
+r=3Df(t,a);if(r)return =
+r;x+=3Dy+d.length;t=3Ds.substring(x,s.length);t=3Dx<=0A=
+s.length?t:''}return ''}function =
+s_isf(t,a){if(t.substring(0,2)=3D=3D's_')=0A=
+t=3Dt.substring(2);return (t!=3D''&&t=3D=3Da)}function =
+s_fsf(t,a){if(s_pt(a,=0A=
+',',s_isf,t))s_fsg+=3D(s_fsg!=3D''?',':'')+t;return 0}var s_fsg=0A=
+function s_fs(s,f){s_fsg=3D'';s_pt(s,',',s_fsf,f);return s_fsg}var=0A=
+s_c_d=3D'';function s_c_gdf(t,a){if(!s_num(t))return 1;return 0}=0A=
+function s_c_gd(){var d=3Ds_wd.location.hostname,n=3Ds_gg(=0A=
+'cookieDomainPeriods'),p;if(d&&!s_c_d){n=3Dn?parseInt(n):2;n=3Dn>2?n:2;p=3D=0A=
+d.lastIndexOf('.');while(p>=3D0&&n>1){p=3Dd.lastIndexOf('.',p-1);n--}=0A=
+s_c_d=3Dp>0&&s_pt(d,'.',s_c_gdf,0)?d.substring(p):''}return s_c_d}=0A=
+function s_c_r(k){k=3Ds_ape(k);var c=3D' '+s_d.cookie,s=3Dc.indexOf(' '+k=0A=
++'=3D'),e=3Ds<0?s:c.indexOf(';',s),v=3Ds<0?'':s_epa(c.substring(s+2=0A=
++k.length,e<0?c.length:e));return v}function s_c_w(k,v,e){var d=3D=0A=
+s_c_gd(),l=3Ds_gg('cookieLifetime');v=3D''+v;l=3Dl?(''+l).toUpperCase():'=
+'=0A=
+if(e&&l!=3D'SESSION'&&l!=3D'NONE'){l=3DparseInt(l);if(l){e=3Dnew Date=0A=
+e.setTime(e.getTime()+(parseInt(l)*1000))}}if(k&&l!=3D'NONE'){=0A=
+s_d.cookie=3Dk+'=3D'+s_ape(v)+'; path=3D/;'+(e&&l!=3D'SESSION'?' =
+expires=3D'=0A=
++e.toGMTString()+';':'')+(d?' domain=3D'+d+';':'');return =
+s_c_r(k)=3D=3Dv}=0A=
+return 0}function s_cet(f,a,et,oe,fb){var r,d=3D0=0A=
+/*@cc_on@if(@_jscript_version>=3D5){try{return f(a)}catch(e){return =
+et(e)}d=3D1}@end@*/=0A=
+if(!d){if(s_ismac&&s_u.indexOf('MSIE 4')>=3D0)return fb(a);else{=0A=
+s_wd.s_oe=3Ds_wd.onerror;s_wd.onerror=3Doe;r=3Df(a);s_wd.onerror=3Ds_wd.s=
+_oe=0A=
+return r}}}function s_gtfset(e){return s_tfs}function s_gtfsoe(e){=0A=
+s_wd.onerror=3Ds_wd.s_oe;s_etfs=3D1;var =
+code=3Ds_gs(s_un);if(code)s_d.write(=0A=
+code);s_etfs=3D0;return true}function s_gtfsfb(a){return s_wd}=0A=
+function s_gtfsf(w){var p=3Dw.parent,l=3Dw.location;s_tfs=3Dw;if(p&&=0A=
+p.location!=3Dl&&p.location.host=3D=3Dl.host){s_tfs=3Dp;return =
+s_gtfsf(s_tfs)}=0A=
+return s_tfs}function s_gtfs(){if(!s_tfs){s_tfs=3Ds_wd;if(!s_etfs)s_tfs=3D=0A=
+s_cet(s_gtfsf,s_tfs,s_gtfset,s_gtfsoe,s_gtfsfb)}return s_tfs}=0A=
+function s_ca(un){un=3Dun.toLowerCase();var =
+ci=3Dun.indexOf(','),fun=3Dci<0?=0A=
+un:un.substring(0,ci),imn=3D's_i_'+fun;if(s_d.images&&s_apv>=3D3&&=0A=
+!s_isopera&&(s_ns6<0||s_apv>=3D6.1)){s_ios=3D1;if(!s_d.images[imn]&&(=0A=
+!s_isns||(s_apv<4||s_apv>=3D5))){s_d.write('<im'+'g name=3D"'+imn=0A=
++'" height=3D1 width=3D1 border=3D0 =
+alt=3D"">');if(!s_d.images[imn])s_ios=3D0}}}=0A=
+function s_it(un){s_ca(un)}function s_mr(un,sess,q,ta){un=3D=0A=
+un.toLowerCase();var ci=3Dun.indexOf(','),fun=3Dci<0?un:un.substring(0,ci=0A=
+),unc=3Ds_rep(fun,'_','-'),imn=3D's_i_'+fun,im,b,e,rs=3D'http'+(s_ssl?'s'=
+:''=0A=
+)+'://'+(s_ssl?'102':unc)+'.112.2O7.net/b/ss/'+un+'/1/G.5-PD-R/'=0A=
++sess+'?[AQB]&ndh=3D1'+(q?q:'')+(s_q?s_q:'')+'&[AQE]';if(s_ios){im=3Ds_wd=
+[=0A=
+imn]?s_wd[imn]:s_d.images[imn];if(!im)im=3Ds_wd[imn]=3Dnew =
+Image;im.src=3Drs=0A=
+if(rs.indexOf('&pe=3D')>=3D0&&(!ta||ta=3D=3D'_self'||ta=3D=3D'_top'||(s_w=
+d.name&&=0A=
+ta=3D=3Ds_wd.name))){b=3De=3Dnew =
+Date;while(e.getTime()-b.getTime()<500)e=3D=0A=
+new Date}return ''}return '<im'+'g sr'+'c=3D"'+rs=0A=
++'" width=3D1 height=3D1 border=3D0 alt=3D"">'}function s_gg(v){var =
+g=3D's_'+v=0A=
+return s_wd[g]||s_wd.s_disableLegacyVars?s_wd[g]:s_wd[v]}var s_qav=3D''=0A=
+function s_havf(t,a){var b=3Dt.substring(0,4),s=3Dt.substring(4),n=3D=0A=
+parseInt(s),k=3D's_g_'+t,m=3D's_vpm_'+t,q=3Dt,v=3Ds_gg('linkTrackVars'),e=
+=3D=0A=
+s_gg('linkTrackEvents');if(!s_wd['s_'+t])s_wd['s_'+t]=3D'';s_wd[k]=3Ds_wd=
+[=0A=
+m]?s_wd['s_vpv_'+t]:s_gg(t);if(s_lnk||s_eo){v=3Dv?v+',pageName,charSet,'=0A=
++'cookieDomainPeriods,cookieLifetime,eVarCFG,purchaseID':'';if(v&&=0A=
+!s_pt(v,',',s_isf,t))s_wd[k]=3D'';if(t=3D=3D'events'&&e)s_wd[k]=3Ds_fs(s_=
+wd[k=0A=
+],e)}s_wd[m]=3D0;if(t=3D=3D'charSet')q=3D'ce';else =
+if(t=3D=3D'cookieDomainPeriods'=0A=
+)q=3D'cdp';else if(t=3D=3D'cookieLifetime')q=3D'cl';else =
+if(t=3D=3D'channel')q=3D=0A=
+'ch';else if(t=3D=3D'campaign')q=3D'v0';else =
+if(s_num(s)){if(b=3D=3D'prop')q=3D'c'=0A=
++n;else if(b=3D=3D'eVar')q=3D'v'+n;else =
+if(b=3D=3D'hier')q=3D'h'+n}if(s_wd[k]&&t!=3D=0A=
+'linkName'&&t!=3D'linkType')s_qav+=3D'&'+q+'=3D'+s_ape(s_wd[k]);return =
+''}=0A=
+function s_hav(){var n,av=3D'charSet,cookieDomainPeriods,cookieLifetime'=0A=
++',pageName,channel,server,pageType,campaign,state,zip,events,product'=0A=
++'s,purchaseID,eVarCFG,linkName,linkType';for(n=3D1;n<26;n++)av+=3D',prop=
+'=0A=
++n+',eVar'+n+',hier'+n;s_qav=3D'';s_pt(av,',',s_havf,0);return s_qav}=0A=
+function s_lnf(t,h){t=3Dt?t.toLowerCase():'';h=3Dh?h.toLowerCase():'';var=0A=
+te=3Dt.indexOf('=3D');if(t&&te>0&&h.indexOf(t.substring(te+1))>=3D0)=0A=
+return t.substring(0,te);return ''}function s_ln(h){if(s_gg(=0A=
+'linkNames'))return s_pt(s_gg('linkNames'),',',s_lnf,h);return ''}=0A=
+function =
+s_ltdf(t,h){t=3Dt?t.toLowerCase():'';h=3Dh?h.toLowerCase():'';var=0A=
+qi=3Dh.indexOf('?');h=3Dqi>=3D0?h.substring(0,qi):h;if(t&&h.substring(=0A=
+h.length-(t.length+1))=3D=3D'.'+t)return 1;return 0}function s_ltef(t,h){=0A=
+t=3Dt?t.toLowerCase():'';h=3Dh?h.toLowerCase():'';if(t&&h.indexOf(t)>=3D0=
+)=0A=
+return 1;return 0}function s_lt(h){var lft=3Ds_gg(=0A=
+'linkDownloadFileTypes'),lef=3Ds_gg('linkExternalFilters'),lif=3Ds_gg(=0A=
+'linkInternalFilters')?s_gg('linkInternalFilters'):=0A=
+s_wd.location.hostname;h=3Dh.toLowerCase();if(s_gg('trackDownloadLinks'=0A=
+)&&lft&&s_pt(lft,',',s_ltdf,h))return 'd';if(s_gg('trackExternalLinks'=0A=
+)&&(lef||lif)&&(!lef||s_pt(lef,',',s_ltef,h))&&(!lif||!s_pt(lif,',',=0A=
+s_ltef,h)))return 'e';return ''}function s_lc(e){s_lnk=3Ds_co(this)=0A=
+s_gs('');s_lnk=3D'';if(this.s_oc)return this.s_oc(e);return true}=0A=
+function s_ls(){var l,ln,oc;for(ln=3D0;ln<s_d.links.length;ln++){l=3D=0A=
+s_d.links[ln];oc=3Dl.onclick?l.onclick.toString():'';if(oc.indexOf(=0A=
+"s_gs(")<0&&oc.indexOf("s_lc(")<0){l.s_oc=3Dl.onclick;l.onclick=3Ds_lc}}}=0A=
+function s_bc(e){s_eo=3De.srcElement?e.srcElement:e.target;s_gs('')=0A=
+s_eo=3D''}function s_ot(o){var x=3Do.type,y=3Do.tagName;return (x&&=0A=
+x.toUpperCase?x:y&&y.toUpperCase?y:o.href?'A':'').toUpperCase()}=0A=
+function s_oid(o){var =
+t=3Ds_ot(o),p=3Do.protocol,c=3Do.onclick,n=3D'',x=3D0;if(=0A=
+!o.s_oid){if(o.href&&(t=3D=3D'A'||t=3D=3D'AREA')&&(!c||!p||p.toLowerCase(=0A=
+).indexOf('javascript')<0))n=3Do.href;else if(c){n=3Ds_rep(s_rep(s_rep(=0A=
+s_rep(c.toString(),"\r",''),"\n",''),"\t",''),' ','');x=3D2}else if(=0A=
+o.value&&(t=3D=3D'INPUT'||t=3D=3D'SUBMIT')){n=3Do.value;x=3D3}else =
+if(o.src&&t=3D=3D=0A=
+'IMAGE')n=3Do.src;if(n){o.s_oid=3Ds_fl(n,100);o.s_oidt=3Dx}}return =
+o.s_oid}=0A=
+function s_rqf(t,un){var =
+e=3Dt.indexOf('=3D'),u=3De>=3D0?','+t.substring(0,e)=0A=
++',':'';return u&&u.indexOf(','+un+',')>=3D0?s_epa(t.substring(e+1)):''}=0A=
+function s_rq(un){var =
+c=3Dun.indexOf(','),v=3Ds_c_r('s_sq'),q=3D'';if(c<0)=0A=
+return s_pt(v,'&',s_rqf,un);return s_pt(un,',',s_rq,0)}var s_sqq,s_squ=0A=
+function s_sqp(t,a){var =
+e=3Dt.indexOf('=3D'),q=3De<0?'':s_epa(t.substring(e=0A=
++1));s_sqq[q]=3D'';if(e>=3D0)s_pt(t.substring(0,e),',',s_sqs,q);return 0}=0A=
+function s_sqs(un,q){s_squ[un]=3Dq;return 0}function s_sq(un,q){s_sqq=3D=0A=
+new Object;s_squ=3Dnew Object;s_sqq[q]=3D'';var =
+k=3D's_sq',v=3Ds_c_r(k),x,c=3D0=0A=
+s_pt(v,'&',s_sqp,0);s_pt(un,',',s_sqs,q);v=3D'';for(x in s_squ)s_sqq[=0A=
+s_squ[x]]+=3D(s_sqq[s_squ[x]]?',':'')+x;for(x in s_sqq)if(x&&s_sqq[x]&&(=0A=
+x=3D=3Dq||c<2)){v+=3D(v?'&':'')+s_sqq[x]+'=3D'+s_ape(x);c++}return =
+s_c_w(k,v,0=0A=
+)}function s_wdl(e){s_wd.s_wd_l=3D1;var =
+r=3Dtrue;if(s_wd.s_ol)r=3Ds_wd.s_ol(=0A=
+e);if(s_wd.s_ls)s_wd.s_ls();return r}function s_wds(un){un=3D=0A=
+un.toLowerCase();s_wd.s_wd_l=3D1;if(s_apv>3&&(!s_isie||!s_ismac||s_apv>=3D=0A=
+5)){s_wd.s_wd_l=3D0;if(!s_wd.s_unl)s_wd.s_unl=3Dnew Array;s_wd.s_unl[=0A=
+s_wd.s_unl.length]=3Dun;if(s_d.body&&s_d.body.attachEvent){if(=0A=
+!s_wd.s_bcr&&s_d.body.attachEvent('onclick',s_bc))s_wd.s_bcr=3D1}=0A=
+else if(s_d.body&&s_d.body.addEventListener){if(!s_wd.s_bcr&&=0A=
+s_d.body.addEventListener('click',s_bc,false))s_wd.s_bcr=3D1}else{var=0A=
+ol=3Ds_wd.onload?s_wd.onload.toString():'';if(ol.indexOf("s_wdl(")<0){=0A=
+s_wd.s_ol=3Ds_wd.onload;s_wd.onload=3Ds_wdl}}}}function s_iepf(i,a){if(=0A=
+i.substring(0,1)!=3D'{')i=3D'{'+i+'}';if(s_d.body.isComponentInstalled(i,=0A=
+'ComponentID')){var n=3Ds_pl.length;s_pl[n]=3Dnew Object;s_pl[n].name=3Di=0A=
++':'+s_d.body.getComponentVersion(i,'ComponentID')}return 0}=0A=
+function s_vs(un,x){var s=3Ds_gg('visitorSampling'),g=3Ds_gg(=0A=
+'visitorSamplingGroup'),k=3D's_vsn_'+un+(g?'_'+g:''),n=3Ds_c_r(k),e=3D=0A=
+new Date,y=3De.getYear();e.setYear(y+10+(y<1900?1900:0));if(s){s*=3D100=0A=
+if(!n){if(!s_c_w(k,x,e))return 0;n=3Dx}if(n%10000>s)return 0}return 1}=0A=
+function s_dyasmf(t,m){if(t&&m&&m.indexOf(t)>=3D0)return 1;return 0}=0A=
+function s_dyasf(t,m){var =
+i=3Dt?t.indexOf('=3D'):-1,un,s;if(i>=3D0&&m){var=0A=
+un=3Dt.substring(0,i),s=3Dt.substring(i+1);if(s_pt(s,',',s_dyasmf,m))=0A=
+return un}return 0}function s_dyas(un,l,m){if(!m)m=3Ds_wd.location.host=0A=
+if(!m.toLowerCase)m=3Dm.toString();l=3Dl.toLowerCase();m=3Dm.toLowerCase(=
+)=0A=
+var nun=3Ds_pt(l,';',s_dyasf,m);if(nun)return nun;return un}=0A=
+function s_gs(un){un=3Dun.toLowerCase()=0A=
+var dyas=3Ds_gg('dynamicAccountSelection'),dyal=3Ds_gg(=0A=
+'dynamicAccountList'),dyam=3Ds_gg('dynamicAccountMatch');if(dyas&&dyal)=0A=
+un=3Ds_dyas(un,dyal,dyam);=0A=
+s_un=3Dun;var trk=3D1,tm=3Dnew Date,sed=3DMath&&Math.random?Math.floor(=0A=
+Math.random()*10000000000000):tm.getTime(),sess=3D's'+Math.floor(=0A=
+tm.getTime()/10800000)%10+sed,yr=3Dtm.getYear(),t,ta=3D'',q=3D'',qs=3D'';=
+yr=3D=0A=
+yr<1900?yr+1900:yr;t=3Dtm.getDate()+'/'+tm.getMonth()+'/'+yr+' '=0A=
++tm.getHours()+':'+tm.getMinutes()+':'+tm.getSeconds()+' '+tm.getDay()=0A=
++' '+tm.getTimezoneOffset();if(!s_q){var =
+tfs=3Ds_gtfs(),tl=3Dtfs.location,=0A=
+r=3Dtfs.document.referrer,s=3D'',c=3D'',v=3D'',p=3D'',bw=3D'',bh=3D'',j=3D=
+'1.0',g=3D=0A=
+s_wd.location,k=3Ds_c_w('s_cc','true',0)?'Y':'N',hp=3D'',ct=3D'',iepl=3Ds=
+_gg(=0A=
+'iePlugins'),pn=3D0,ps;if(s_apv>=3D4)s=3Dscreen.width+'x'+screen.height;i=
+f(=0A=
+s_isns||s_isopera){if(s_apv>=3D3){j=3D'1.1';v=3Ds_n.javaEnabled()?'Y':'N'=0A=
+if(s_apv>=3D4){j=3D'1.2';c=3Dscreen.pixelDepth;bw=3Ds_wd.innerWidth;bh=3D=0A=
+s_wd.innerHeight;if(s_apv>=3D4.06)j=3D'1.3'}}s_pl=3Ds_n.plugins}else if(=0A=
+s_isie){if(s_apv>=3D4){v=3Ds_n.javaEnabled()?'Y':'N';j=3D'1.2';c=3D=0A=
+screen.colorDepth;if(s_apv>=3D5){bw=3Ds_d.documentElement.offsetWidth;bh=3D=0A=
+s_d.documentElement.offsetHeight;j=3D'1.3';if(!s_ismac&&s_d.body){=0A=
+s_d.body.addBehavior("#default#homePage");hp=3Ds_d.body.isHomePage(tl)?=0A=
+"Y":"N";s_d.body.addBehavior("#default#clientCaps");ct=3D=0A=
+s_d.body.connectionType;if(iepl){s_pl=3Dnew Array;s_pt(iepl,',',s_iepf,=0A=
+'');}}}}else r=3D'';if(!s_pl&&iepl)s_pl=3Ds_n.plugins}if(s_pl)while(pn<=0A=
+s_pl.length&&pn<30){ps=3Ds_fl(s_pl[pn].name,100)+';';if(p.indexOf(ps)<0)=0A=
+p+=3Dps;pn++}s_q=3D(g?'&g=3D'+s_ape(s_fl(g,255)):'')+(r?'&r=3D'+s_ape(s_f=
+l(r,=0A=
+255)):'')+(s?'&s=3D'+s_ape(s):'')+(c?'&c=3D'+s_ape(c):'')+(j?'&j=3D'+j:''=
+)+(=0A=
+v?'&v=3D'+v:'')+(k?'&k=3D'+k:'')+(bw?'&bw=3D'+bw:'')+(bh?'&bh=3D'+bh:'')+=
+(ct?=0A=
+'&ct=3D'+s_ape(ct):'')+(hp?'&hp=3D'+hp:'')+(s_vb?'&vb=3D'+s_vb:'')+(p?'&p=
+=3D'=0A=
++s_ape(p):'')}if(s_gg('usePlugins'))s_wd.s_doPlugins();q+=3D(t?'&t=3D'=0A=
++s_ape(t):'')+s_hav();if(s_lnk||s_eo){var o=3Ds_eo?s_eo:s_lnk;if(!o)=0A=
+return '';var =
+p=3Ds_wd.s_g_pageName,w=3D1,t=3Ds_ot(o),n=3Ds_oid(o),x=3Do.s_oidt,=0A=
+h,l,i,oc;if(s_eo&&o=3D=3Ds_eo){while(o&&!n&&t!=3D'BODY'){o=3Do.parentElem=
+ent?=0A=
+o.parentElement:o.parentNode;if(!o)return '';t=3Ds_ot(o);n=3Ds_oid(o);x=3D=0A=
+o.s_oidt}oc=3Do.onclick?o.onclick.toString():'';if(oc.indexOf("s_gs(")>=3D=0A=
+0)return =
+''}ta=3Do.target;h=3Do.href?o.href:'';i=3Dh.indexOf('?');h=3Ds_gg(=0A=
+'linkLeaveQueryString')||i<0?h:h.substring(0,i);l=3Ds_gg('linkName')?=0A=
+s_gg('linkName'):s_ln(h);t=3Ds_gg('linkType')?s_gg('linkType'=0A=
+).toLowerCase():s_lt(h);if(t&&(h||l))q+=3D'&pe=3Dlnk_'+(t=3D=3D'd'||t=3D=3D=
+'e'?=0A=
+s_ape(t):'o')+(h?'&pev1=3D'+s_ape(h):'')+(l?'&pev2=3D'+s_ape(l):'');else=0A=
+trk=3D0;if(s_gg('trackInlineStats')){if(!p){p=3Ds_wd.location.href;w=3D0}=
+p=3D=0A=
+p?s_fl(p,255):'';t=3Ds_ot(o);i=3Do.sourceIndex;if(s_gg('objectID')){n=3D=0A=
+s_gg('objectID');x=3D1;i=3D1}if(p&&n&&t)qs=3D'&pid=3D'+s_ape(p)+(w?'&pidt=
+=3D'+w:=0A=
+'')+'&oid=3D'+s_ape(n)+(x?'&oidt=3D'+x:'')+'&ot=3D'+s_ape(t)+(i?'&oi=3D'+=
+i:'')=0A=
+}s_wd.s_linkName=3Ds_wd.s_linkType=3Ds_wd.s_objectID=3Ds_lnk=3Ds_eo=3D'';=
+if(=0A=
+!s_wd.s_disableLegacyVars)s_wd.linkName=3Ds_wd.linkType=3Ds_wd.objectID=3D=
+''=0A=
+}if(!trk&&!qs)return '';var code=3D'';if(un){if(trk&&s_vs(un,sed))code+=3D=0A=
+s_mr(un,sess,q+(qs?qs:s_rq(un)),ta);s_sq(un,trk?'':qs)}else if(=0A=
+s_wd.s_unl)for(var unn=3D0;unn<s_wd.s_unl.length;unn++){un=3Ds_wd.s_unl[=0A=
+unn];if(trk&&s_vs(un,sed))code+=3Ds_mr(un,sess,q+(qs?qs:s_rq(un)),ta)=0A=
+s_sq(un,trk?'':qs)}return code}function s_dc(un){un=3Dun.toLowerCase()=0A=
+var dyas=3Ds_gg('dynamicAccountSelection'),dyal=3Ds_gg(=0A=
+'dynamicAccountList'),dyam=3Ds_gg('dynamicAccountMatch');if(dyas&&dyal)=0A=
+un=3Ds_dyas(un,dyal,dyam);=0A=
+s_wds(un);s_ca(un);return s_gs(un)}=0A=
+=0A=
+// ###################################################=0A=
+// CODE CHANGE FOR FILE: PROTOCOL EXCLUSION 6/28/2005=0A=
+// ###################################################=0A=
+// OLD CODE:=0A=
+// s_code=3Ds_dc(s_account);if(s_code)s_d.write(s_code)=0A=
+// NEW CODE:=0A=
+   if(s_isValid) {  s_code=3Ds_dc(s_account);if(s_code)s_d.write(s_code) =
+}=0A=
+// END CODE CHANGE=0A=
+
+------=_NextPart_000_00C0_01C68309.BCBCC530--
