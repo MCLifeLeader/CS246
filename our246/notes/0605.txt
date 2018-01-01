@@ -1,0 +1,35 @@
+
+   Monday, 5 June 2006
+
+o  Eric, Prayer and Thought
+
+o  Question 29
+
+   (See our246/samplecode/q29)
+
+o  Simple Swing
+
+   (See our246/samplecode/gui/swing)
+
+o  Threads of Glory
+
+   Should use the Singleton Design Pattern.
+
+   Showed a slew of examples of Runnable classes to be
+   dynamically loaded and instantiated in a Glory JVM.
+
+o  RecursiveBorderLayout.java
+
+   (See our246/samplecode/gui)
+
+o  Project Discussion
+
+   Syzygy?
+
+   Or something else?
+
+   Play the game.
+
+   Think about how to simulate the game in software.
+
+================================================================

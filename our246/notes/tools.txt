@@ -1,0 +1,57 @@
+
+Thursday, 19 January, 2006 -- A note about tools
+
+   "If you examine the beliefs of any master craftsman, you will
+   discover a certain reverence for tools as worthy friends. The
+   world-renowned Japanese temple carpenters, for example, spend much
+   more time sharpening a tool than they spend making the cuts. The
+   spirit of fine Japanese carpentry dictates that the planning and
+   contemplation of a construction project should take much longer
+   than the execution; in some cases, the carpenter lives on the site
+   of a house or temple for at least a year, paying attention to the
+   geography and the light, sharpening his tools, visualizing each
+   cut, each piece of joinery, in his head, over and over again."
+
+       -- Howard Rheingold, They Have A Word For It
+
+What does this have to do with our class? Yesterday in the lab I
+noticed a certain lack of "friendliness" between some of you and the
+tools you used, most notably, cvs and text editors. When you "cvs ci"
+a file, the default behavior of cvs is to bring up a text editor named
+"vi" (pronounced vee-eye, not vye) and wait for you to enter a comment
+describing the changes you made in this new revision you're checking
+in. Please, please, figure out and get very comfortable with this
+process. There are at least a half dozen different ways you can do
+this checkin process, with varying degrees of comfort and
+convenience. Can you discover what some of these different ways are?
+
+Some students ask me if they can use a Java IDE
+(Integrated Development Environment) tool in this class.
+(Perhaps they've used one before.)
+
+I always give the same answer.
+
+NO! I absolutely FORBID IT!
+
+Why?
+
+Because in my day I've seen too many CS degree-holders who would
+be hard pressed to write even a simple three-line "Hello, World!" java
+program without one! This is not good, to have your hand held so
+tightly by a tool that you are unable to do the simplest things
+without it.
+
+The sharpest tool in your toolbox should be a good text editor (not
+word processor) program, with which you can write good, clean,
+well-designed (from deep and ponderous thought -- you know, planning
+and contemplation!) source code.
+
+If your typing skills are weak, there are some editors that are better
+than others. As you no doubt have gathered by now, my personal
+preference (and that of a lot of students who discover its power) is
+emacs. My preferred cvs client is the command-line, closely followed
+by pcl-cvs, which runs under emacs. There are lots of others -- some
+are even web-based -- but it's up to you to choose what you will use.
+
+Oh, and if your thinking skills are weak, I hope to help you
+strengthen them through this course!

@@ -1,0 +1,77 @@
+
+   Thursday, 01 June 2006
+
+o  Randy, Prayer and Thought
+
+o  The Problems We Face (as software designers)
+
+o  The Problem "The Man in Black" faced
+
+o  "The significant problems we face cannot be solved
+    at the same level of thinking
+    we were at when we created them."
+
+   - Albert Einstein
+
+   Q. What is a code pattern? (or idiom)
+
+   A. A way to use the language you're coding, e.g.,
+      for (int i = 0; i < len; i++) to iterate "len" times.
+
+   Q. What is a *design* pattern?
+
+   A. It is a way to design a solution to a problem (in a context).
+
+o  The Granddaddy of Design Patterns: Singleton
+
+   Solves the problem of providing global checked access to a service
+   of which there should be only one instance.
+
+   It is important to keep in mind that this is a DESIGN pattern, not
+   a CODE pattern.  "Singleton" is not the name of a class -- it's
+   the name of the *pattern* for writing a class.
+
+   For example, Fred is a Singleton:
+
+   public class Fred
+   {
+      // Fred provides services, kind of like the System class does,
+      // only NOT statically.  And we only want ONE instance of Fred!
+
+      private static Fred cInstance = null;
+
+      public static Fred getInstance()
+      {
+         if (cInstance == null)
+         {
+            cInstance = new Fred();
+         }
+         return cInstance;
+      }
+
+      // the above shows lazy initialization
+      // the below shows eager initialization
+
+      private static Fred cInstance = new Fred();
+
+      public static Fred getInstance()
+      {
+         return cInstance;
+      }
+
+      private Fred()
+      {
+         // only Fred code (i.e., getInstance) is allowed
+	 // to call this private constructor
+      }
+   }
+
+   Clients just call Fred.getInstance() to get the one-and-only
+   instance of Fred and make requests of it.
+
+o  The punch line:
+
+   Familiarity with Design Patterns is like having an immunity to
+   Iocane powder when dealing with the Sicilians of complexity!
+   
+================================================================

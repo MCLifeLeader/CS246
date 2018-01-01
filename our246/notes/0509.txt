@@ -1,0 +1,305 @@
+
+   Tuesday, 9 May 2006
+
+o  Randall Booth, Prayer and Thought
+
+o  Answer Questions
+
+o  Java in One Gulp (!) (Gasp -- not SIP!)
+
+   The Java Programming Language has been called by its creator:
+
+   C++ without guns, knives or clubs!
+
+   //---- Compiling and Running
+
+   cd directoryWhereJavaFilesAre
+
+   //-- compile:
+
+   javac ClassNotInPackage.java
+
+   //-- run:
+
+   java ClassNotInPackage
+
+   cd directoryAbovePackages
+
+   //-- compile:
+
+   javac app/Tester.java
+
+   //-- run:
+
+   java app.Tester  (fully package-qualified name)
+
+   //---- Primitive Data Types
+
+   byte - 8 bits
+   short - 16 bits
+   int - 32 bits
+   long - 64 bits
+   float - 32 bits
+   double - 64 bits
+   boolean - true or false
+
+   char - 16 bits, Unicode
+
+   //---- Declaring and Initializing Variables
+
+   //-- Primitives:
+
+   boolean isOn = false;
+
+   int weight;
+
+   long sequenceNum = 98763847;
+
+   //-- Objects:
+
+   Car fastCar;
+
+   fastCar = new Car();
+
+   Button quitButton = new Button("Quit");
+
+   //---- Class Definitions
+
+   public class ShoppingCart
+   {
+      // class info
+   }
+
+   //---- Reference Assignment and Garbage Collection
+
+   Account a = new Account();
+
+   Account b = a;
+
+   //-- both variables now reference the same object
+
+   b = null;
+
+   //-- now there is one reference to the object
+
+   a = null;
+
+   //-- now there are no references to the object so it is now
+   //-- available for garbage collection
+
+   //---- Constructors
+
+   //-- invoked when an object is created
+
+   class ShoppingCart
+   {
+      ShoppingCart()
+      {
+	 // constructor has same name
+	 // as class and no return type
+      }
+   }
+
+   //---- Declaring Methods
+
+   public void setSize(int i);
+
+   public int getSize();
+
+   //---- Access Modifiers
+
+   public
+
+   //-- code can be accessed from any class
+
+   protected
+
+   //-- package-level access, but subclasses in a different
+   //-- package from the superclass will still inherit members
+   //-- from superclass
+
+   No Access Modifier ("phriendly")
+
+   //-- default access, which is package-level, meaning
+   //-- code can be accessed only from code in same package
+
+   private
+
+   //-- code can be accessed only from code from same class
+
+   //---- Arrays
+
+   int[] numbers = new int[5];
+
+   int[] numbers;
+
+   numbers = new int[2];
+
+   numbers[0] = 1;
+   numbers[1] = 2;
+
+   //-- OR
+
+   int[] numbers = {1, 2, 3, 4, 5};
+
+   Car[] cars = new Car[2];
+
+   cars[0] = new Car();
+
+   //-- OR
+
+   Car[] cars = {new Car(), new Car()};
+
+   for (int i = 0; i < numbers.length; i++)
+   {
+      System.out.println(numbers[i]);
+      // equivalently in C++:
+      // cout << numbers[i] << endl;
+   }
+
+   //---- Inheritance and Interface Implementation
+
+   class Animal { ... }
+
+   class Cat extends Animal { ... }
+
+   interface Pet
+   {
+      const int LIKABILITY_INDEX = 42;
+      void beFriendly();
+   }
+
+   class Dog extends Animal implements Pet
+   {
+      public void beFriendly() { ... }
+   }
+
+   //---- Overriding Methods
+
+   class Animal
+   {
+      void eat() { ... }
+   }
+
+   class Dog extends Animal
+   {
+      // override superclass eat method
+      void eat()
+      {
+	 // do Dog-specific eat behavior
+      }
+   }
+
+   //---- Overloading Methods
+
+   class Dog extends Animal
+   {
+      void bark()
+      {
+	 // bark twice
+	 bark(2);
+      }
+
+      void bark(int numOfBarks)
+      {
+	 // bark numOfBarks times
+      }
+   }
+
+   //---- Calling Methods (use dot operator)
+
+   Dog d = new Dog();
+
+   d.bark();
+
+   int dogWeight = d.getWeight();
+
+   //---- Exception Handling
+
+   //-- declaring an Exception:
+
+   public void doRiskyThings()
+      throws Exception
+   {
+      if (thingsGoBadly)
+      {
+	 throw new Exception();
+      }
+   }
+
+   //-- catching an Exception:
+
+   public void callRiskyMethod()
+   {
+      try
+      {
+	 doRiskyThings();
+      }
+      catch (Exception e)
+      {
+	 // take steps to deal with it --
+	 // one such step might be to re-throw the exception
+      }
+      finally
+      {
+	 // do these things no matter what --
+	 // e.g., just before the exception is re-thrown
+      }
+   }
+
+   //-- Complete Example
+
+//-- snip here and place contents below in a file named Dog.java --
+//   NOT including the bottom line of '=' characters!
+
+public class Dog
+{
+   private int weight;
+   private String name;
+
+   public void setWeight(int w)
+   {
+      weight = w;
+   }
+
+   public int getWeight()
+   {
+      return weight;
+   }
+
+   public void setName(String n)
+   {
+      name = n;
+   }
+
+   public String getName()
+   {
+      return name;
+   }
+
+   public void bark()
+   {
+      System.out.println("Ruff!");
+   }
+
+   public void bark(int num)
+   {
+      for (int i = 0; i < num; i++)
+      {
+	 bark();
+      }
+   }
+
+   public static void main(String[] args)
+   {
+      // test dog stuff
+      Dog d = new Dog();
+      d.setWeight(50);
+      d.setName("Buffy");
+      System.out.println(d.getWeight());
+      System.out.println(d.getName());
+      d.bark(3);
+   }
+}
+
+================================================================

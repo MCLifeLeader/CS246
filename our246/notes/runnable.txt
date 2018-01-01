@@ -1,0 +1,22 @@
+
+The "Runnable" interface in many ways epitomizes the beauty and power
+of Java.
+
+How so?
+
+Well, to see this you must first familiarize yourself with the javadoc
+description of this most excellent interface, which the first hit from
+googling "java.lang.Runnable" will provide. (The description, that is,
+not the familiarity nor the understanding. That comes later!)
+
+The talk about Threads will perhaps look Greek to you, but don't worry
+-- we'll talk more about Threads!
+
+Here are a couple of questions the answers to which are easily
+obtainable:
+
+1) How "rich" is this interface (how many methods, what are the return
+types and parameter lists, are they simple or complex, etc.)?
+
+2) What restrictions are placed on implementations of this interface?
+   In other words, what "general contract" must be adhered to?

@@ -1,0 +1,47 @@
+ 
+   Monday, 15 May 2006
+
+o  Rick Cochran, Prayer and Thought
+
+o  Answer Questions
+
+o  "Know your Variables and How Objects Behave" quiz
+
+o  A Note on Notes (see notes.txt)
+
+o  The Runnable Interface (java.lang.Runnable)
+
+   Having a license to do anything you want is the Runnable "contract".
+
+   void run() says no data passed or returned, just "run"
+
+o  But first!
+
+   Basic Object-Oriented Program Organizing Principles
+
+   BOOPOP #1
+
+   If you have a "large" main method, you probably don't have
+   an object-oriented program!
+
+o  What about the SplitDBF.java code?  Is its main "large"?!
+
+o  What about the FunApplet.java code?
+
+o  Implementing Runnable
+
+   How do we make an applet that "animates" a graphical object.
+
+   We need to have the functionality of a Thread.
+
+   There's a problem, however.  We cannot get that functionality
+   by *subclassing* java.lang.Thread because we need to *subclass*
+   java.applet.Applet.
+
+   But we CAN implement the Runnable interface.  Doing this guarantees
+   the rest of the world (including the Thread class) that we will
+   include a run() method in our class.
+
+   See FunnerApplet.java
+
+============================================================================

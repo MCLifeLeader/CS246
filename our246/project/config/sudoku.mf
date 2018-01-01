@@ -1,0 +1,5 @@
+Created-By: Hand
+Manifest-Version: 1.0
+Main-Class: sudoku.ui.Sudoku
+Class-Path: sudokuui.jar sudokucs.jar sudokual.jar sudokuai.jar sudokusi.jar lib/junit.jar lib/xstream.jar
+Other-Resources: config/sudoku.config config/images config/dictionary.txt.gz

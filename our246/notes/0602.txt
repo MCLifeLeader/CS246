@@ -1,0 +1,105 @@
+
+   Friday, 02 June 2006
+
+o  Rick, Prayer and Thought
+
+o  Answer Questions
+
+o  Go over Midterm Exam
+
+o  Design Principles
+
+   But first!
+
+   The Seven Bad Design "Smells"
+
+   (from Chapter 6 of UML for Java Programmers)
+
+   RIGIDITY
+
+       The system is hard to change because every time
+       you change one thing, you have to change something
+       else in a never-ending succession of changes.
+
+   FRAGILITY
+
+       A change to one part of the system causes it to break
+       in many other, completely unrelated, parts.
+
+   IMMOBILITY
+
+       It is hard to disentangle the system into components
+       that can be reused in other systems.
+
+   VISCOSITY
+
+       The development environment is held together with
+       duct tape and library paste.  It takes forever to
+       go around the edit-compile-test loop.
+
+   NEEDLESS COMPLEXITY
+
+       There are lots of very clever code structures that
+       aren't actually necessary right now, but could be
+       very useful one day.
+
+   NEEDLESS REPETITION
+
+       The code looks like it was written by two programmers
+       named Copy and Paste.
+
+   OPACITY
+
+       Elucidation of the originator's intent presents certain
+       difficulties related to convolution of expression.
+
+o  Uncle Bob's Design Principles
+
+   (also from Chapter 6 of UML for Java Programmers)
+
+   - The Single Responsibility Principle
+
+   - The Open-Closed Principle
+
+   - The Liskov Substitution Principle
+
+   - The Dependency Inversion Principle
+
+   - The Interface Segregation Principle
+
+o  Inheritance breaks Encapsulation (a Design Caution)
+
+   Encapsulation means you can change the implementation of a class
+   without affecting other classes that depend on it.
+
+   This only works as long as the implementation details "fulfil their
+   contracts".
+
+   The problem is, once you inherit from a class, you start relying on
+   how that class is implemented internally.
+
+   For example, there's the old problem having a class where method A
+   calls method B.
+
+   Overriding B in the subclass will change the behavior of A, even
+   though you haven't specifically overridden A as well.
+
+o  BOODPAP #5 (We'll see a lot more of this principle later.)
+
+   Identify (and encapsulate) the aspects of your application that
+   vary and separate them from what stays the same.
+
+   For example, FileToucher stays the same, and its subclasses vary.
+
+o  What do Design Patterns give you?
+
+   (e.g., Singleton, Command, Prototype -- the ones UMLet uses)
+
+   1. They aim at "freshening" the bad design smells.
+
+   2. They represent a higher level of thinking.
+
+   3. As stated yesterday, they give you an immunity to
+      Iocane powder when dealing with the Sicilians of complexity!
+
+================================================================

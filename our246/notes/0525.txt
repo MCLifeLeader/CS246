@@ -1,0 +1,41 @@
+
+   Thursday, 25 May 2006
+
+o  Kelly, Prayer and Thought
+
+o  Answer Questions
+
+   What is dynamic loading and binding?
+
+   What is the Fragile Superclass Syndrome?
+
+   What is a run-time representation?
+
+o  The Fragile Superclass Syndrome
+
+   Does java suffer from this syndrome?
+
+o  Dynamic Loading and Binding
+
+   * running programs can be dynamically modified
+   * many payoffs for developers
+   * huge flexibility
+
+   Classes are linked in (or loaded) as required.
+
+   The basic job of any linker or loader is simple:
+
+   It binds more abstract names to more concrete names,
+   which permits programmers to write code using the more abstract names.
+
+   E.g., "println" gets bound to "the location 612 bytes from the beginning
+   of the executable code for this module."
+
+o  Particles and Collections, finis
+
+   cd our246/samplecode/particles; cvs up; cvs log Particles.java
+
+   (also know how to see the actual changes from revision to
+    revision, e.g., cvs diff -r1.4 -r1.5 Particles.java)
+
+================================================================

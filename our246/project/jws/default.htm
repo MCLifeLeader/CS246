@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<title>Web Start for Sudoku</title>
+		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
+		<meta content="C#" name="CODE_LANGUAGE">
+		<meta content="JavaScript" name="vs_defaultClientScript">
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+		<span id="lbl_Header"></span>
+		<style>BODY { FONT-WEIGHT: normal; FONT-SIZE: medium; COLOR: #ffffff; BORDER-TOP-STYLE: none; FONT-STYLE: normal; FONT-FAMILY: Tahoma, Arial, Sans Serif; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: #3366cc; BORDER-BOTTOM-STYLE: none }
+	A { FONT-WEIGHT: bold; COLOR: #66ccff }
+		</style>
+	</HEAD>
+<body>
+<h1 align="center">Web Start!</h1>
+<script language="javascript" >
+<!--
+var detect;
+var windowsIE;
+
+function checkPlatform(string)
+{
+    place = detect.indexOf(string) + 1;
+    thestring = string;
+    return place;
+}
+
+function main()
+{
+   detect = navigator.userAgent.toLowerCase();
+   
+   windowsIE = (checkPlatform("msie") && checkPlatform("win"));
+   
+   if (windowsIE) 
+   {
+      document.write('<OBJECT codeBase="http://java.sun.com/update/1.5.0/jinstall-1_5_0_05-windows-i586.cab" classid="clsid:5852F5ED-8BF4-11D4-A245-0080C6F74284" height="0" width="0">');
+      document.write('<PARAM NAME="app" VALUE="http://www.spamfan.com/webStart/sudoku.jnlp">');
+	   document.write('<PARAM NAME="back" VALUE="false">');
+	   document.write('</OBJECT>');
+    }
+    else if (!webstartVersionCheck('1.5')) 
+    {
+       document.write('You need to download the a newer java run time environment.');
+       document.write('<br> redirecting now');
+       window.open('http://jdl.sun.com/webapps/getjava/BrowserRedirect?locale=en&host=java.com', 'needdownload');
+    }
+    
+    launchTID = setInterval('launchJNLP("http://www.spamfan.com/webStart/sudoku.jnlp")', 100);
+}
+
+function webstartVersionCheck(versionString) 
+{
+    // Mozilla may not recognize new plugins without this refresh
+    navigator.plugins.refresh(true);
+    
+    // First, determine if Web Start is available
+    if (navigator.mimeTypes['application/x-java-jnlp-file']) 
+    {
+        // Next, check for appropriate version family
+        for (var i = 0; i < navigator.mimeTypes.length; ++i) 
+        {
+            pluginType = navigator.mimeTypes[i].type;
+            if (pluginType == 'application/x-java-applet;version=' + versionString) 
+            {
+                return true;
+            }
+        }
+    }
+}
+
+function launchJNLP(app) 
+{
+    if (webstartVersionCheck("1.5")) 
+    {
+        clearInterval(launchTID);
+        window.location = app;
+    }
+}
+main();
+//-->
+</script>
+<p>The download should start momentarily if it does not <A HREF="http://jdl.sun.com/webapps/getjava/BrowserRedirect?locale=en&host=java.com">click here</A> and download the java run time environment.<br />
+<a href="sudoku.jnlp">Sudoku java webstart.</a>
+</body>
+</HTML>
+

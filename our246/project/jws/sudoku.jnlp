@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+" codebase="http://www.spamfan.com/webStart" href="Sudoku.jnlp">
+   <information>
+      <title>Sudoku</title>
+      <vendor>BYU-Idaho CS246</vendor>
+      <offline-allowed/>
+   </information>
+   <security>
+      <j2ee-application-client-permissions/>
+      <all-permissions/>
+   </security>
+   <resources>
+      <jar href="/webStart/project/sudoku.jar"/>
+      <jar href="/webStart/project/sudokuai.jar"/>
+      <jar href="/webStart/project/sudokual.jar"/>
+      <jar href="/webStart/project/sudokucs.jar"/>
+      <jar href="/webStart/project/sudokusi.jar"/>
+      <jar href="/webStart/project/sudokuui.jar" main="true"/>
+      <jar href="/webStart/project/lib/xstream.jar"/>
+      <j2se version="1.5+" href="http://java.sun.com/products/autodl/j2se"/>
+   </resources>
+   <application-desc main-class="sudoku.ui.Sudoku"/>
+</jnlp>

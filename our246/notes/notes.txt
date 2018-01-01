@@ -1,0 +1,29 @@
+
+A Note on Notes
+
+Should you be continually taking notes?
+
+Generally speaking, no. Try to listen and grasp the gist of what I am
+talking about. However, please jot down questions as they occur to
+you, or points that you would like more light on. Passive listening
+can be rather soporific!
+
+Significantly, there is a study where half of a large group of
+students were told to take notes, the other half were told not to.
+At the end of class, the notes had to be turned in and immediately
+a test was given. The note-takers had a much higher retention rate
+than the non-note-takers. The act of writing something down makes
+your brain "take note" better. So, take note!
+
+When is the best time to review?
+
+Research also shows that a student who reviews his or her notes
+immediately after a class has better retention than those who
+postpone reviewing for a long time.
+
+A good strategy would be to write down key words and hooks to come
+back to and link up and compare with my in-class notes, which I will
+publish in the /home/cs246/notes directory, usually right after class
+every day. The following commands will get you started:
+
+cd /home/c246/notes; more *.txt

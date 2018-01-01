@@ -1,0 +1,77 @@
+ 
+   Thursday, 11 May 2006
+
+o  Mike Carey, Prayer and Thought
+
+o  Answer Questions
+
+o  A note about tools (see tools.txt)
+
+o  Files and Applets
+
+o  An Applet by another name...
+
+   a "Mini" application
+
+o  An Applet is a support class to the browser
+
+   An applet is just a class that is being made available to the
+   browser for execution.  It's largely up to the whims and
+   desires of the browser to decide on when/where your applet will
+   execute.
+
+o  An applet is a subclass of java.applet.Applet
+
+   The functionality needed to create an applet is encapsulated within
+   the java.applet.Applet class which is provided by the JDK.  Your
+   applet will inherit this functionality and add on to it as needed.
+
+o  Not far from standalone
+
+   As is illustrated by the appletviewer program, applets aren't that
+   far from standalone programs.  A frame and a main form a good
+   start.
+
+o  Tighter security rules
+
+   Applets run under a different (tighter) set of rules than
+   standalone applications.  This is to prevent malicious applets from
+   damaging client machines/data.
+
+o  Creating interesting applets
+
+   Interesting applets typically have several features, two of which
+   are supported init() and paint() methods.
+
+o  init()
+
+   The init method provide a place for initializing the applet.  It is
+   called when the applet is first brought up.
+
+o  paint()
+
+   The paint method is *automatically* called every time the browser
+   thinks your window needs repainting.
+
+o  start()
+
+   The applet's start method is called when an applet is on the
+   visible page.
+
+o  stop()
+
+   The applet's stop method is called when an applet is removed from
+   the visible screen.
+
+o  update()
+
+   The update method's default behavior is to clear the screen, then
+   call paint.  This usually causes flicker.
+
+o  What does all this have to do with Files?
+
+   How do you make the FileToucherApplet find its "args".
+
+   (See /home/cs246/samplecode/applets/FileToucherApplet.java)
+
+============================================================================

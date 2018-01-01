@@ -1,0 +1,5 @@
+bin\Debug\HomeWork.exe
+bin\Debug\HomeWork.pdb
+obj\x86\Debug\ResolveAssemblyReference.cache
+obj\x86\Debug\HomeWork.exe
+obj\x86\Debug\HomeWork.pdb

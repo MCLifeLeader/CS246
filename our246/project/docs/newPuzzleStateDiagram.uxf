@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><umlet_diagram><element><type>com.umlet.element.base.SequenceDiagram</type><coordinates><x>280</x><y>90</y><w>1290</w><h>380</h></coordinates><panel_attributes>title:sequence diagram
+_ClientModel_|_Server_|_Player_|_PuzzleCollection_|_Puzzle_|_PuzzleChangedEvent_
+iframe{:newPuzzle
+1-&gt;&gt;2:1,2,3,4,5:newPuzzle(difficulty)
+2-&gt;&gt;4:1,2,3,4,5:                        getNewPuzzle(difficulty)
+2&lt;-4:1,2,3,4,5:                    Grid theNewPuzzle
+1&lt;&lt;-2:1,2,3,4,5:setNewPuzzle()
+1-&gt;&gt;5:1,2,3,4,5:newPuzzle(mSolution)
+1-&gt;&gt;1:1,2,3,4,5:firePuzzleEvent()
+1-&gt;&gt;6:1,2,3,4,5,6:new PuzzleChangedEvent
+iframe}</panel_attributes><additional_attributes>transparentSelection=false</additional_attributes></element></umlet_diagram>

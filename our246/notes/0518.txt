@@ -1,0 +1,50 @@
+
+   Thursday, 18 May 2006
+
+o  Eric Merrill, Prayer and Thought
+
+o  Regarding Everyone (including Brother Neff) quiz
+
+o  Answer Questions
+
+o  Basic Object-Oriented Design Principles and Practices
+
+   (To keep in mind as you face various Design Decisions!)
+
+   BOODPAP #1
+
+   Deep levels of inheritance are "bad".
+   At most three is a good rule of thumb.
+
+   BOODPAP #2
+
+   Without multiple inheritance "of implementation" there must
+   be some "duplication of effort" in code.
+
+	   - OR (in other words) -
+
+   With only multiple inheritance "of interface" some redundant
+   code will be unavoidable.
+
+   BOODPAP #3
+
+   If you want your class to inherit from a different class than
+   what it is already inheriting from, YOU CAN'T (always) do it!
+
+   Suppose it's a 3rd-party (library) class that you're using, and
+   you don't have the source code.
+
+   The class is "closed to modification" -- in other words it can't
+   be modified to suit your special purposes.
+
+   Trying to "mix in" functionality is tricky, as we'll see.
+   Behavior modification can certainly backfire!
+
+   BOODPAP #4
+
+   Prefer composition to inheritance!
+
+   On what basis should you choose or favor one over the other is the
+   "pyrophoric" (burning) question!
+
+================================================================

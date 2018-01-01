@@ -1,0 +1,11 @@
+
+   Tuesday, 20 June 2006
+
+o  Rick Cochran, Prayer and Thought
+
+o  Design Patterns Presentations
+
+   * Model-View-Controller (ui)
+   * Command (ui)
+
+================================================================

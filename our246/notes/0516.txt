@@ -1,0 +1,41 @@
+
+   Tuesday, 16 May 2006
+
+o  James Comish, Prayer and Thought
+
+o  Answer Questions
+
+   Q. What IS an object-oriented program?
+
+   A. It's a bunch of objects talking (sending messages) to each other.
+
+      The shortest (useful) OOP main method is a one-liner:
+
+         // just construct some class object,
+         // presumably its constructor
+         // is what does the something "useful"
+         new SomeClass();
+
+      Better to construct and then call a method, which
+      still can be done as a one-liner, e.g.:
+
+         new SomeClass().doSomethingUseful();
+
+      or as a two-liner, e.g.:
+
+         SomeClass sc = new SomeClass();
+         sc.doSomethingUseful();
+
+o  Threads and Runnables
+
+   What is the relationship between a Thread and a Runnable?
+
+   See /home/cs246/samplecode/FunRun.java
+
+   (Introducing a new java code idiom for your benefit...)
+
+   See also /home/cs246/samplecode/applets/Wator.java
+
+   (Another new java code idiom is shown -- can you find it?)
+
+================================================================
